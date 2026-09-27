@@ -16,88 +16,47 @@
   
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css?v=3.0">
+
+  <!-- Three.js for 3D Intro Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-  <!-- ============================================ -->
-  <!-- 3D SACRED SPIRITUAL PORTAL INTRO SCREEN -->
-  <!-- ============================================ -->
-  <div id="spiritual-intro-portal" class="intro-portal-overlay">
-    <!-- Starfield & Galaxy Canvas -->
-    <canvas id="portal-galaxy-canvas"></canvas>
-    
-    <!-- Rotating Sacred Astrological Geometry Portal Wheel -->
-    <div class="portal-mandala-wrap">
-      <svg class="portal-mandala" viewBox="0 0 200 200">
-        <circle cx="100" cy="100" r="95" fill="none" stroke="url(#introGold)" stroke-width="0.8" stroke-dasharray="2 2" />
-        <circle cx="100" cy="100" r="85" fill="none" stroke="url(#introCyan)" stroke-width="0.5" />
-        <path d="M100 5 L105 95 L195 100 L105 105 L100 195 L95 105 L5 100 L95 95 Z" fill="none" stroke="url(#introGold)" stroke-width="0.4" opacity="0.6" />
-        <!-- 12 Astrological Houses & Sacred Angles -->
-        <g stroke="url(#introCyan)" stroke-width="0.3" opacity="0.5">
-          <line x1="100" y1="5" x2="100" y2="195" />
-          <line x1="5" y1="100" x2="195" y2="100" />
-          <line x1="32.8" y1="32.8" x2="167.2" y2="167.2" />
-          <line x1="32.8" y1="167.2" x2="167.2" y2="32.8" />
-        </g>
-        <circle cx="100" cy="100" r="50" fill="none" stroke="url(#introGold)" stroke-width="0.4" stroke-dasharray="1 1" />
-        <defs>
-          <linearGradient id="introGold" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffd97d" />
-            <stop offset="100%" stop-color="#d4af37" />
-          </linearGradient>
-          <linearGradient id="introCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#00f0ff" />
-            <stop offset="100%" stop-color="#005ce6" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
+  <!-- ═════════ 3D INTRO ═════════ -->
+  <div id="intro" aria-label="Animated introduction. Scroll to continue.">
+    <div id="stage">
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <div class="hud">
+        <div class="hud-top">
+          <span class="mark">D·O·T</span>
+          <button class="skip" id="skip" type="button">Skip intro</button>
+        </div>
 
-    <!-- 7 Chakra Energy Orbs Alignment Pillar -->
-    <div class="chakra-alignment-container">
-      <div class="chakra-orb sah" title="Sahasrara • Crown Chakra"><span class="c-code">7</span><span class="c-label">CROWN</span></div>
-      <div class="chakra-orb ajn" title="Ajna • Third Eye"><span class="c-code">6</span><span class="c-label">THIRD EYE</span></div>
-      <div class="chakra-orb vis" title="Vishuddha • Throat"><span class="c-code">5</span><span class="c-label">THROAT</span></div>
-      <div class="chakra-orb ana" title="Anahata • Heart"><span class="c-code">4</span><span class="c-label">HEART</span></div>
-      <div class="chakra-orb man" title="Manipura • Solar Plexus"><span class="c-code">3</span><span class="c-label">SOLAR</span></div>
-      <div class="chakra-orb sva" title="Swadhisthana • Sacral"><span class="c-code">2</span><span class="c-label">SACRAL</span></div>
-      <div class="chakra-orb mul" title="Muladhara • Root"><span class="c-code">1</span><span class="c-label">ROOT</span></div>
-    </div>
+        <div class="phase" id="ph-a">
+          <div class="logo gold-text">Divine Oracle<br>Tarot</div>
+          <div class="label by">by Ishita Kothari</div>
+          <div class="hint"><span>Scroll to consult the stars</span><i class="rail"></i></div>
+        </div>
+        <div class="phase" id="ph-b">
+          <h2>Twelve houses turn above you</h2>
+          <p>Every reading begins with where the sky stood the moment you arrived.</p>
+        </div>
+        <div class="phase" id="ph-c">
+          <h2>Twenty-two keys</h2>
+          <p>The Major Arcana. The soul's journey from The Fool to The World.</p>
+        </div>
+        <div class="phase" id="ph-d">
+          <h2>Three cards. <span class="gold-text">One clear answer.</span></h2>
+        </div>
+        <div class="spread-labels" id="spread-labels"><span>Past</span><span>Present</span><span>Future</span></div>
+        <div class="phase" id="ph-e">
+          <h2 class="gold-text">Step through</h2>
+        </div>
 
-    <!-- 3D Flying Spiritual Cards & Elements -->
-    <div class="floating-intro-elements">
-      <div class="intro-tarot-card card-1"><img src="images/tarot_star.png" alt="Star Card"></div>
-      <div class="intro-tarot-card card-2"><img src="images/tarot_moon.png" alt="Moon Card"></div>
-      <div class="intro-tarot-card card-3"><img src="images/mystical_crystals.png" alt="Oracle Orb"></div>
-    </div>
-
-    <!-- 3D Cinematic Spiritual Crawl Text -->
-    <div class="crawl-perspective-viewport">
-      <div class="crawl-content-block">
-        <div class="crawl-header">DIVINE ORACLE TAROT</div>
-        <div class="crawl-subheader">BY ISHITA KOTHARI</div>
-        <div class="crawl-divider">✦ ✦ ✦</div>
-        <p class="crawl-paragraph">
-          WELCOME TO THE SACRED SANCTUARY OF HIGH-VIBRATIONAL HEALING & ANCIENT WISDOM.
-        </p>
-        <p class="crawl-paragraph">
-          STEP THROUGH THE CELESTIAL GATEWAY OF CHAKRA REALIGNMENT, TAROT MYSTICISM, SPELLCASTING, MANIFESTATION COACHING & VASTU SCIENCES.
-        </p>
-        <p class="crawl-paragraph">
-          DISSOLVE EMOTIONAL BLOCKAGES. UNCOVER HIDDEN TRUTHS. MANIFEST THE HIGHER DESTINY YOU ARE DESTINED TO LIVE.
-        </p>
-        <div class="crawl-divider">✦ ✦ ✦</div>
+        <div class="degree" id="degree">Sun path<b>♈︎ 0°</b></div>
+        <div id="bloom"></div>
+        <div id="veil"></div>
       </div>
-    </div>
-
-    <!-- Action Buttons to Enter Sanctuary -->
-    <div class="portal-actions">
-      <button class="btn btn-gold-filled btn-enter-sanctuary" onclick="enterSanctuary()">
-        ENTER THE SANCTUARY ✨
-      </button>
-      <button class="btn btn-outline btn-skip-intro" onclick="enterSanctuary()">
-        SKIP INTRO
-      </button>
     </div>
   </div>
 
@@ -105,9 +64,11 @@
   <canvas id="stars-canvas"></canvas>
   <canvas id="stardust-canvas"></canvas>
 
-  <!-- Floating Navigation Bar -->
-  <header id="header" class="site-header">
-    <div class="nav-container">
+  <!-- ═════════ SITE WRAPPER ═════════ -->
+  <div class="site" id="site">
+    <!-- Floating Navigation Bar -->
+    <header id="header" class="site-header">
+      <div class="nav-container">
       <div class="logo">
         <a href="#home">
           <span class="logo-title">DIVINE ORACLE TAROT</span>
@@ -1258,6 +1219,7 @@
       </form>
     </div>
   </div>
+  </div><!-- /#site -->
 
   <!-- JavaScript Modules -->
   <script src="app.js?v=3.0"></script>

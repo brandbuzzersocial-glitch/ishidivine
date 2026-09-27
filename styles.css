@@ -2314,8 +2314,218 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* ==========================================================================
-   3D SACRED SPIRITUAL PORTAL INTRO SCREEN STYLES
+   3D SCROLL INTRO ANIMATION STYLES (from E:\bnp\index.html)
    ========================================================================== */
+
+#intro {
+  position: relative;
+  height: 720vh;
+}
+#stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #03061a;
+}
+#gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hud-top {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 0px) + 18px);
+  left: clamp(16px, 4vw, 56px);
+  right: clamp(16px, 4vw, 56px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+.mark {
+  font-family: var(--font-serif-logo, 'Cinzel Decorative', serif);
+  font-size: 14px;
+  letter-spacing: .14em;
+  color: var(--gold-primary, #d4af37);
+}
+.skip {
+  pointer-events: auto;
+  background: rgba(7, 13, 43, .5);
+  border: 1px solid rgba(212, 175, 55, .3);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: border-color .3s, color .3s;
+  color: #efe7d3;
+}
+.skip:hover {
+  border-color: var(--gold-primary, #d4af37);
+  color: #f3dc95;
+}
+.phase {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-inline: clamp(16px, 4vw, 56px);
+  text-align: center;
+  opacity: 0;
+  will-change: opacity, transform;
+  z-index: 5;
+}
+.phase h2 {
+  font-size: clamp(34px, 6vw, 76px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.05;
+  color: #efe7d3;
+  font-family: var(--font-serif-header, serif);
+  text-transform: none;
+}
+.phase p {
+  max-width: 34ch;
+  margin: 14px auto 0;
+  color: #a3add3;
+  font-size: clamp(17px, 2vw, 21px);
+}
+#ph-a {
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+#ph-a .logo {
+  font-family: var(--font-serif-logo, 'Cinzel Decorative', serif);
+  font-weight: 400;
+  font-size: clamp(40px, 8.4vw, 112px);
+  line-height: 1;
+  letter-spacing: .02em;
+}
+#ph-a .by {
+  margin-top: 18px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--gold-primary, #d4af37);
+}
+#ph-a .hint {
+  margin-top: clamp(40px, 10vh, 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #a3add3;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+.hint .rail {
+  width: 1px;
+  height: 54px;
+  background: linear-gradient(var(--gold-primary, #d4af37), transparent);
+  position: relative;
+  overflow: hidden;
+}
+.hint .rail::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  width: 3px;
+  height: 14px;
+  background: #f3dc95;
+  border-radius: 2px;
+  animation: drip 2.2s ease-in-out infinite;
+}
+@keyframes drip {
+  0% { top: -14px; opacity: 0; }
+  30% { opacity: 1; }
+  100% { top: 54px; opacity: 0; }
+}
+#ph-b, #ph-c {
+  top: auto;
+  bottom: clamp(60px, 14vh, 150px);
+}
+#ph-d {
+  top: calc(env(safe-area-inset-top, 0px) + 76px);
+}
+#ph-d h2 {
+  font-size: clamp(28px, 4.4vw, 54px);
+}
+.spread-labels {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(40px, 11vh, 120px);
+  display: flex;
+  justify-content: center;
+  gap: clamp(34px, 11vw, 150px);
+  opacity: 0;
+  z-index: 5;
+}
+.spread-labels span {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold-primary, #d4af37);
+}
+#ph-e {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.degree {
+  position: absolute;
+  right: clamp(16px, 4vw, 56px);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 22px);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: #a3add3;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  z-index: 5;
+}
+.degree b {
+  display: block;
+  font-family: var(--font-serif-header, serif);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 0;
+  color: #f3dc95;
+  line-height: 1;
+}
+#bloom, #veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 4;
+}
+#bloom {
+  background: radial-gradient(circle at 50% 50%, #fff6dc 0%, #f3dc95 22%, rgba(217,180,90,.55) 45%, rgba(3,6,26,0) 75%);
+}
+#veil {
+  background: #03061a;
+}
+.site {
+  position: relative;
+  z-index: 1;
+}
 
 .intro-portal-overlay {
   position: fixed;
