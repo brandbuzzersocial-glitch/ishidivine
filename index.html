@@ -87,6 +87,7 @@
           <li><a href="#about" class="nav-link">ABOUT</a></li>
           <li><a href="#services" class="nav-link">SERVICES</a></li>
           <li><a href="#healing" class="nav-link">HEALING</a></li>
+          <li><a href="#healing-stones" class="nav-link">GEMSTONES</a></li>
           <li><a href="#why-choose" class="nav-link">WHY ME</a></li>
           <li><a href="#testimonials" class="nav-link">REVIEWS</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
@@ -210,71 +211,6 @@
 
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- INTERACTIVE DAILY TAROT CARD DRAWER SECTION -->
-  <!-- ============================================ -->
-  <section id="daily-oracle" class="daily-oracle-section">
-    <div class="section-container">
-      <div class="section-header text-center">
-        <span class="section-kicker">INTERACTIVE ORACLE SANCTUARY</span>
-        <h2 class="section-title">DRAW YOUR <span class="gold-text">DAILY TAROT CARD</span></h2>
-        <div class="title-divider"><span class="gem-symbol">✦</span></div>
-        <p class="section-subtitle">
-          Focus your energy, take a deep breath, and click below to shuffle and flip your personal intuitive message for today.
-        </p>
-      </div>
-
-      <div class="oracle-drawer-stage">
-        <!-- Interactive Card Fan / Deck -->
-        <div class="oracle-deck-container" id="oracle-deck-container">
-          <div class="deck-cards-fan" id="deck-cards-fan">
-            <div class="fan-card card-back" style="--i:-3" onclick="drawDailyCard(0)"></div>
-            <div class="fan-card card-back" style="--i:-2" onclick="drawDailyCard(1)"></div>
-            <div class="fan-card card-back" style="--i:-1" onclick="drawDailyCard(2)"></div>
-            <div class="fan-card card-back" style="--i:0" onclick="drawDailyCard(3)"></div>
-            <div class="fan-card card-back" style="--i:1" onclick="drawDailyCard(4)"></div>
-            <div class="fan-card card-back" style="--i:2" onclick="drawDailyCard(5)"></div>
-            <div class="fan-card card-back" style="--i:3" onclick="drawDailyCard(6)"></div>
-          </div>
-          <div class="deck-action-row">
-            <button class="btn btn-gold-filled btn-shuffle-deck" onclick="shuffleDailyDeck()">
-              <i class="fas fa-random"></i> SHUFFLE DECK
-            </button>
-            <span class="deck-prompt-text">Click any card to reveal your daily message</span>
-          </div>
-        </div>
-
-        <!-- Revealed Reading Drawer Card Panel -->
-        <div class="oracle-reveal-panel hidden" id="oracle-reveal-panel">
-          <div class="reveal-card-3d" id="reveal-card-3d">
-            <div class="reveal-card-inner">
-              <div class="reveal-card-front">
-                <img id="drawn-card-img" src="images/tarot_star.png" alt="Drawn Tarot Card">
-              </div>
-            </div>
-          </div>
-
-          <div class="reveal-content-glass">
-            <span class="reveal-number" id="drawn-card-num">XVII</span>
-            <h3 class="reveal-title" id="drawn-card-title">THE STAR</h3>
-            <span class="reveal-tagline" id="drawn-card-keywords">HOPE • RENEWAL • DIVINE INSPIRATION</span>
-            <p class="reveal-desc" id="drawn-card-reading">
-              The Star shines upon your path today, signaling a period of deep healing, restored hope, and spiritual renewal. Trust that the universe is aligning opportunities to fulfill your highest aspirations.
-            </p>
-            <div class="reveal-actions">
-              <button class="btn btn-gold-filled" onclick="openBookingModal('Daily Tarot Clarification', 'Voice Note')">
-                GET FULL DEEP READING <i class="fab fa-whatsapp"></i>
-              </button>
-              <button class="btn btn-outline" onclick="resetDailyDeck()">
-                DRAW ANOTHER CARD
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -429,8 +365,7 @@
 
       <!-- Category Filter Tabs (Ways to Work) -->
       <div class="services-tabs">
-        <button class="tab-btn active" onclick="filterServices('all')">All Readings</button>
-        <button class="tab-btn" onclick="filterServices('whispered')">The Whispered Oracle</button>
+        <button class="tab-btn active" onclick="filterServices('whispered')">The Whispered Oracle</button>
         <button class="tab-btn" onclick="filterServices('talk')">The Tarot Talk</button>
         <button class="tab-btn" onclick="filterServices('vision')">The Divine Vision</button>
         <button class="tab-btn" onclick="filterServices('live')">LiveOracle (Jaipur)</button>
@@ -446,29 +381,6 @@
           </div>
         </div>
 
-        <!-- Custom Glassmorphic Voice Sample Preview Player -->
-        <div class="whispered-audio-preview-box glass-panel">
-          <div class="audio-player-info">
-            <div class="audio-badge"><i class="fas fa-music"></i> VOICE NOTE SAMPLE</div>
-            <h4 class="audio-title">Listen to a Sample Guidance Voice Note</h4>
-            <p class="audio-sub">Experience the calm, high-vibrational, intuitive tone Ishita delivers in every voice reading.</p>
-          </div>
-          <div class="audio-controls-row">
-            <button class="audio-play-btn" id="voice-sample-play-btn" onclick="toggleVoiceSample()" aria-label="Play audio preview">
-              <i class="fas fa-play" id="voice-play-icon"></i>
-            </button>
-            <div class="soundwave-container" id="soundwave-container">
-              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
-              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
-              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
-              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
-              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
-              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
-            </div>
-            <span class="audio-timer" id="voice-audio-timer">0:00 / 0:35</span>
-          </div>
-        </div>
-        
         <div class="pricing-grid">
           <!-- Card 1: ₹777 -->
           <div class="price-card glass-panel">
@@ -556,7 +468,7 @@
       </div>
 
       <!-- Service Category: The Tarot Talk (Voice Call Sessions) -->
-      <div class="services-category-block" data-category="talk">
+      <div class="services-category-block hidden" data-category="talk">
         <div class="category-header-wrap">
           <div class="cat-icon"><i class="fas fa-phone-alt"></i></div>
           <div class="cat-details">
@@ -631,7 +543,7 @@
       </div>
 
       <!-- Service Category: The Divine Vision (Video Call) -->
-      <div class="services-category-block" data-category="vision">
+      <div class="services-category-block hidden" data-category="vision">
         <div class="category-header-wrap">
           <div class="cat-icon"><i class="fas fa-video"></i></div>
           <div class="cat-details">
@@ -706,7 +618,7 @@
       </div>
 
       <!-- Service Category: LiveOracle (In-Person Jaipur Exclusive) -->
-      <div class="services-category-block" data-category="live">
+      <div class="services-category-block hidden" data-category="live">
         <div class="category-header-wrap">
           <div class="cat-icon"><i class="fas fa-gem"></i></div>
           <div class="cat-details">
@@ -771,8 +683,14 @@
         Step into the role of active co-creator of your destiny. Readings diagnose the energy; healing actively restructures it.
       </p>
 
+      <!-- Healing Sub-Navigation Tabs for Single Screen View -->
+      <div class="healing-tabs">
+        <button class="tab-btn active" id="btn-healing-modalities" onclick="switchHealingTab('modalities')"><i class="fas fa-spa gold-text"></i> Sacred Healing Modalities</button>
+        <button class="tab-btn" id="tab-btn-chakra" onclick="switchHealingTab('chakra')"><i class="fas fa-circle-notch gold-text"></i> Interactive 7-Chakra Explorer</button>
+      </div>
+
       <!-- Interactive 7-Chakra Energy Alignment Explorer -->
-      <div class="chakra-diagnostic-wrapper glass-panel">
+      <div class="chakra-diagnostic-wrapper glass-panel" id="chakra-diagnostic-container" style="display: none;">
         <div class="chakra-diag-header text-center">
           <span class="chakra-badge">INTERACTIVE ENERGY EXPLORER</span>
           <h3>Explore Your 7 Sacred Chakra Energy Centers</h3>
@@ -808,7 +726,7 @@
         </div>
       </div>
 
-      <div class="healing-grid">
+      <div class="healing-grid" id="healing-grid-container">
         
         <!-- Category 1: Energy Healing -->
         <div class="healing-category-card glass-panel">
@@ -979,6 +897,212 @@
     </div>
   </section>
 
+  <!-- ============================================ -->
+  <!-- PRECIOUS, SEMI-PRECIOUS & HEALING STONES SECTION -->
+  <!-- ============================================ -->
+  <section id="healing-stones" class="stones-section">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-kicker">SACRED ENERGIES &amp; VEDIC GEMS</span>
+        <h2 class="section-title">PRECIOUS, SEMI-PRECIOUS &amp; <span class="gold-text">HEALING STONES</span></h2>
+        <div class="title-divider"><span class="gem-symbol">✦</span></div>
+        <p class="section-subtitle">
+          100% natural, certified, and spiritually consecrated by Ishita Kothari. Channel cosmic planetary vibrations, balance chakras, and manifest divine abundance with genuine energized gemstones.
+        </p>
+      </div>
+
+      <!-- Trust Badges Strip -->
+      <div class="stones-trust-strip">
+        <div class="stones-trust-item">
+          <i class="fas fa-gem gold-text"></i>
+          <div>
+            <strong>100% Certified Natural</strong>
+            <span>Lab-tested, authentic &amp; unheated gemstones</span>
+          </div>
+        </div>
+        <div class="stones-trust-item">
+          <i class="fas fa-magic gold-text"></i>
+          <div>
+            <strong>Vedic Prana-Pratishtha</strong>
+            <span>Ritually cleansed &amp; energetically activated</span>
+          </div>
+        </div>
+        <div class="stones-trust-item">
+          <i class="fas fa-compass gold-text"></i>
+          <div>
+            <strong>Astrological Matching</strong>
+            <span>Personalized to your Kundali &amp; planetary chart</span>
+          </div>
+        </div>
+        <div class="stones-trust-item">
+          <i class="fas fa-shield-alt gold-text"></i>
+          <div>
+            <strong>Bespoke Sacred Jewelry</strong>
+            <span>Custom rings, pendants &amp; bracelets in Panchdhatu / Silver</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Showcase Grid (3 Pillars) -->
+      <div class="stones-grid">
+        
+        <!-- Card 1: Precious Gemstones -->
+        <div class="stone-card glass-panel featured-stone-card">
+          <div class="stone-card-badge">VEDIC RATNA</div>
+          <div class="stone-icon-orb">
+            <i class="fas fa-gem"></i>
+          </div>
+          <div class="stone-icon-header">
+            <h3>Precious Gemstones</h3>
+            <span class="stone-tagline">Jyotish Planetary Remediation</span>
+          </div>
+          <p class="stone-desc">
+            Sourced for their highest optical clarity and energetic potency. Hand-selected to strengthen auspicious planetary energies, eliminate malefic doshas, and accelerate success.
+          </p>
+          <ul class="stone-feature-list">
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Ruby (Manik)</strong><span>Sun • Vitality, Leadership &amp; Power</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Yellow Sapphire (Pukhraj)</strong><span>Jupiter • Fortune, Wisdom &amp; Prosperity</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Blue Sapphire (Neelam)</strong><span>Saturn • Rapid Karma Shifting &amp; Discipline</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Emerald (Panna)</strong><span>Mercury • Intellect, Business &amp; Eloquence</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Natural Basra Pearl (Moti)</strong><span>Moon • Emotional Calm &amp; Divine Intuition</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Red Coral (Moonga)</strong><span>Mars • Willpower, Courage &amp; Protection</span></div>
+            </li>
+          </ul>
+          <div class="stone-card-footer">
+            <button class="btn btn-gold-filled w-full" onclick="openBookingModal('Precious Gemstone Consultation', 'WhatsApp')">
+              CONSULT FOR YOUR GEMSTONE <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Semi-Precious & Healing Crystals -->
+        <div class="stone-card glass-panel">
+          <div class="stone-card-badge">CHAKRA HARMONIZERS</div>
+          <div class="stone-icon-orb">
+            <i class="fas fa-bahai"></i>
+          </div>
+          <div class="stone-icon-header">
+            <h3>Semi-Precious Crystals</h3>
+            <span class="stone-tagline">Aura Cleansing &amp; Frequency Lifting</span>
+          </div>
+          <p class="stone-desc">
+            Raw geodes, polished generators, tumbled pocket stones, and altar crystals that vibrate with Earth's restorative frequencies to dispel anxiety and attract love.
+          </p>
+          <ul class="stone-feature-list">
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Amethyst</strong><span>Crown Chakra • Inner Peace &amp; Psychic Sight</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Rose Quartz</strong><span>Heart Chakra • Unconditional Love &amp; Attraction</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Citrine</strong><span>Solar Plexus • Wealth, Joy &amp; Abundance</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Black Tourmaline</strong><span>Root Chakra • Ultimate Psychic Shield &amp; Grounding</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Lapis Lazuli</strong><span>Third Eye • Divine Truth &amp; Higher Knowing</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Golden Pyrite</strong><span>Abundance Cluster • Money &amp; Opportunity Magnet</span></div>
+            </li>
+          </ul>
+          <div class="stone-card-footer">
+            <button class="btn btn-outline w-full" onclick="openBookingModal('Semi-Precious Crystal Order', 'WhatsApp')">
+              EXPLORE HEALING CRYSTALS <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Energized Remedies & Jewelry -->
+        <div class="stone-card glass-panel">
+          <div class="stone-card-badge">SACRED TALISMANS</div>
+          <div class="stone-icon-orb">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="stone-icon-header">
+            <h3>Energized Remedies &amp; Jewelry</h3>
+            <span class="stone-tagline">Wearable Protection &amp; Manifestation</span>
+          </div>
+          <p class="stone-desc">
+            Hand-crafted spiritual wear infused with sacred mantras, sound bath vibrations, and Reiki energy. Designed to be your everyday energetic companion.
+          </p>
+          <ul class="stone-feature-list">
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>7-Chakra Alignment Bracelets</strong><span>Complete Energetic System Harmony</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Vastu Crystal Pyramids</strong><span>Home &amp; Workplace Spatial Shield</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>108-Bead Japa Malas</strong><span>Sphatik &amp; Rudraksha Deep Meditation</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Custom Raw Crystal Wire Pendants</strong><span>Direct Skin Metaphysical Conduit</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Evil Eye &amp; Nazar Protection Bands</strong><span>Deflection of Heavy &amp; Toxic Gazes</span></div>
+            </li>
+            <li class="stone-feature-item">
+              <i class="fas fa-sparkles gold-text"></i>
+              <div><strong>Reiki-Infused Water Infusers</strong><span>High-Frequency Cellular Hydration</span></div>
+            </li>
+          </ul>
+          <div class="stone-card-footer">
+            <button class="btn btn-gold-filled w-full" onclick="openBookingModal('Energized Jewelry & Remedies', 'WhatsApp')">
+              CUSTOMIZE SACRED WEAR <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Personalized Recommendation Banner -->
+      <div class="stone-consult-banner glass-panel">
+        <div class="stone-consult-content">
+          <span class="consult-badge"><i class="fas fa-sparkles gold-text"></i> PERSONALIZED ENERGY PRESCRIPTION</span>
+          <h3>Not Sure Which Stone Your Aura Requires?</h3>
+          <p>Share your Date of Birth, Birth Time, and current life aspiration. Ishita will channel an astrological and intuitive stone remedy tailored precisely to your karmic blueprint.</p>
+        </div>
+        <div class="stone-consult-cta">
+          <button class="btn btn-gold-filled btn-large" onclick="openBookingModal('Personalized Gemstone Consultation', 'WhatsApp')">
+            GET PERSONALIZED STONE GUIDANCE <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- FAQ Section -->
   <section id="faq" class="faq-section">
     <div class="section-container">
@@ -1106,6 +1230,7 @@
             <li><a href="#about">About Ishita</a></li>
             <li><a href="#services">Tarot Readings</a></li>
             <li><a href="#healing">Energy Healing</a></li>
+            <li><a href="#healing-stones">Gemstones</a></li>
           </ul>
         </div>
 
@@ -1116,7 +1241,7 @@
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#faq">Frequently Asked Questions</a></li>
             <li><a href="#home" onclick="openBookingModal('General Support', 'General Query')">Contact Support</a></li>
-            <li><a href="#privacy" onclick="alert('This website uses secure SSL encryption to protect client information. All session details are strictly confidential under the Divine Oracle Code of Conduct.')">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="alert('This website uses secure SSL encryption to protect client information. All session details are strictly confidential under the Divine Oracle Code of Conduct.')">Privacy Policy</a></li>
           </ul>
         </div>
 

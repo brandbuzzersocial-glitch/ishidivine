@@ -112,62 +112,6 @@ window.resetDailyDeck = function() {
   }
 };
 
-// Custom Audio Synthesizer / Voice Sample Player
-let isVoicePlaying = false;
-let audioSynthOsc = null;
-let audioSynthGain = null;
-let voiceTimerInterval = null;
-let voiceSeconds = 0;
-
-window.toggleVoiceSample = function() {
-  const playIcon = document.getElementById('voice-play-icon');
-  const soundwave = document.getElementById('soundwave-container');
-  const timerEl = document.getElementById('voice-audio-timer');
-
-  if (!isVoicePlaying) {
-    isVoicePlaying = true;
-    if (playIcon) playIcon.className = 'fas fa-pause';
-    if (soundwave) soundwave.classList.add('playing');
-
-    try {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (AudioCtx) {
-        const ctx = new AudioCtx();
-        audioSynthOsc = ctx.createOscillator();
-        audioSynthGain = ctx.createGain();
-        
-        audioSynthOsc.type = 'sine';
-        audioSynthOsc.frequency.setValueAtTime(216, ctx.currentTime);
-        audioSynthGain.gain.setValueAtTime(0.04, ctx.currentTime);
-        
-        audioSynthOsc.connect(audioSynthGain);
-        audioSynthGain.connect(ctx.destination);
-        audioSynthOsc.start();
-      }
-    } catch(e) {}
-
-    voiceTimerInterval = setInterval(() => {
-      voiceSeconds++;
-      if (voiceSeconds >= 35) {
-        window.toggleVoiceSample();
-        voiceSeconds = 0;
-      }
-      const mins = Math.floor(voiceSeconds / 60);
-      const secs = (voiceSeconds % 60).toString().padStart(2, '0');
-      if (timerEl) timerEl.textContent = `${mins}:${secs} / 0:35`;
-    }, 1000);
-
-  } else {
-    isVoicePlaying = false;
-    if (playIcon) playIcon.className = 'fas fa-play';
-    if (soundwave) soundwave.classList.remove('playing');
-    if (voiceTimerInterval) clearInterval(voiceTimerInterval);
-    if (audioSynthOsc) {
-      try { audioSynthOsc.stop(); } catch(e) {}
-    }
-  }
-};
-
 // 7 Chakra Diagnostic Data & Engine
 const CHAKRA_DIAG_DATA = {
   sah: {
@@ -942,6 +886,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  // ==========================================
+  // 5b. Healing Modalities vs Chakra Explorer Tab
+  // ==========================================
+  window.switchHealingTab = function(tab) {
+    const modBtn = document.getElementById('btn-healing-modalities');
+    const chkBtn = document.getElementById('tab-btn-chakra');
+    const chkContainer = document.getElementById('chakra-diagnostic-container');
+    const gridContainer = document.getElementById('healing-grid-container');
+
+    if (!modBtn || !chkBtn || !chkContainer || !gridContainer) return;
+
+    if (tab === 'modalities') {
+      modBtn.classList.add('active');
+      chkBtn.classList.remove('active');
+      chkContainer.style.display = 'none';
+      gridContainer.style.display = 'grid';
+    } else {
+      chkBtn.classList.add('active');
+      modBtn.classList.remove('active');
+      chkContainer.style.display = 'block';
+      gridContainer.style.display = 'none';
+    }
+  };
+
 
   // ==========================================
   // 6. Testimonials Sliding Carousel
@@ -1292,7 +1260,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:neb,color:col,transparent:true,opacity:.45,depthWrite:false,blending:THREE.AdditiveBlending}));sp.position.set(x,y,z);sp.scale.set(s,s,1);scene.add(sp)});
 
     /* astrolabe */
-    const astro=new THREE.Group();scene.add(astro);
+    const astro=new THREE.Group();astro.position.y=-1.4;scene.add(astro);
     const ringMat=o=>new THREE.MeshBasicMaterial({color:0xe7c56d,transparent:true,opacity:o});
     const rings=[[9.4,.05,.95],[8.6,.02,.6],[7.2,.06,.9],[6.1,.035,.8],[5.0,.05,.85]].map(([r,t,o])=>{const m=new THREE.Mesh(new THREE.TorusGeometry(r,t,8,220),ringMat(o));astro.add(m);return m});
     // ticks
