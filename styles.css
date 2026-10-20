@@ -35,7 +35,9 @@
   --font-serif-logo: 'Cinzel Decorative', 'Cinzel', serif;
   --font-serif-header: 'Cormorant Garamond', 'Cinzel', serif;
   --font-serif-body: 'Cormorant Garamond', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Cinzel Decorative', 'Cinzel', serif;
+  --font-heading: 'Cormorant Garamond', 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* Global Layout Variables */
   --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -89,12 +91,19 @@ body {
 /* Typography Scale & Refined Alignment */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif-header);
-  font-weight: 300; /* Ultra-thin, razor-sharp display weight for elite luxury */
-  letter-spacing: 0.12em; /* Spacious letter-spacing for premium breathing room */
+  font-weight: 500;
+  letter-spacing: 0.08em;
   color: var(--white);
-  line-height: 1.3;
-  text-transform: uppercase; /* Clean uppercase editorial flow */
+  line-height: 1.25;
+  text-transform: uppercase;
 }
+
+h1 { font-size: clamp(2rem, 3.8vw, 3.2rem); }
+h2 { font-size: clamp(1.75rem, 2.8vw, 2.4rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
+h4 { font-size: clamp(1.02rem, 1.25vw, 1.22rem); }
+h5 { font-size: clamp(0.9rem, 1vw, 1.05rem); }
+h6 { font-size: clamp(0.8rem, 0.85vw, 0.92rem); }
 
 p {
   font-size: 1rem;
@@ -132,13 +141,14 @@ a {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.82rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   cursor: pointer;
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
   user-select: none;
+  white-space: nowrap;
 }
 
 .btn-gold {
@@ -226,13 +236,20 @@ a {
 }
 
 .nav-container {
-  max-width: 1450px;
-  width: 92%;
+  max-width: 1480px;
+  width: min(95%, 1480px);
   margin: 0 auto;
-  padding: 0.95rem 1rem;
+  padding: 0.75rem clamp(0.8rem, 1.5vw, 1.75rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: clamp(1rem, 2vw, 2.5rem);
+  min-height: 74px;
+}
+
+.logo {
+  flex-shrink: 0;
+  margin-right: clamp(1rem, 1.8vw, 2.5rem);
 }
 
 .logo a {
@@ -243,48 +260,89 @@ a {
 
 .logo-title {
   font-family: var(--font-serif-logo);
-  font-size: 1.25rem;
-  font-weight: 500;
-  letter-spacing: 0.09em;
+  font-size: clamp(1.05rem, 1.25vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
   background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.18;
+  line-height: 1.15;
   filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
+  white-space: nowrap;
 }
 
 .logo-subtitle {
   font-family: var(--font-sans);
-  font-size: 0.52rem;
-  font-weight: 600;
-  letter-spacing: 0.38em;
+  font-size: clamp(0.48rem, 0.52vw, 0.55rem);
+  font-weight: 700;
+  letter-spacing: clamp(0.24em, 0.35vw, 0.38em);
   color: var(--beige);
-  margin-top: 2px;
+  margin-top: 3px;
   text-transform: uppercase;
   opacity: 0.95;
   text-shadow: 0 0 6px rgba(212, 175, 55, 0.35);
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-menu ul {
   display: flex;
   list-style: none;
-  gap: 1.3rem;
+  gap: clamp(0.55rem, 1vw, 1.35rem);
   align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: clamp(0.72rem, 0.78vw, 0.82rem);
   font-weight: 600;
-  letter-spacing: 0.11em;
+  letter-spacing: clamp(0.06em, 0.08vw, 0.1em);
   color: #f2ecdd;
   position: relative;
-  padding: 0.5rem 0.2rem;
-  white-space: nowrap;
+  padding: 0.5rem clamp(0.2rem, 0.35vw, 0.45rem);
+  white-space: nowrap !important;
   text-shadow: 
     0 2px 4px rgba(0, 0, 0, 0.95),
     0 0 10px rgba(212, 175, 55, 0.45);
   transition: var(--transition-fast);
+}
+
+.nav-actions {
+  flex-shrink: 0;
+  margin-left: clamp(1rem, 1.8vw, 2.5rem);
+  display: flex;
+  align-items: center;
+}
+
+.btn-nav {
+  padding: 0.65rem 1.45rem !important;
+  font-size: clamp(0.72rem, 0.76vw, 0.8rem) !important;
+  letter-spacing: 0.12em !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  line-height: 1 !important;
+}
+
+.btn-nav i {
+  font-size: 0.9rem;
+  color: var(--gold-primary);
+  transition: transform 0.25s ease;
+}
+
+.btn-nav:hover i {
+  transform: scale(1.15);
+  color: var(--bg-dark);
 }
 
 .nav-link::after {
@@ -311,6 +369,10 @@ a {
 
 .nav-link:hover::after, .nav-link.active::after {
   width: 100%;
+}
+
+.mobile-drawer-cta {
+  display: none !important;
 }
 
 .mobile-nav-toggle {
@@ -701,38 +763,80 @@ a {
 
 /* 6. Grid Containers & Custom Alignment */
 .section-container {
-  max-width: 1450px;
-  width: 92%;
+  max-width: 1360px;
+  width: min(92%, 1360px);
   margin: 0 auto;
-  padding: 5.5rem 1rem;
+  padding: clamp(4.5rem, 6.5vw, 6.5rem) clamp(1rem, 2vw, 1.5rem);
 }
 
 .section-kicker {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: clamp(0.72rem, 0.8vw, 0.82rem);
   font-weight: 700;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.22em;
   color: var(--gold-primary);
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.85rem;
   text-transform: uppercase;
 }
 
 .section-title {
   font-family: var(--font-serif-header);
-  font-size: 2.2rem;
-  line-height: 1.28;
-  margin-bottom: 1.6rem;
-  letter-spacing: 0.07em;
+  font-size: clamp(1.85rem, 2.9vw, 2.5rem);
+  line-height: 1.26;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.section-desc {
-  max-width: 780px;
-  margin: -0.4rem auto 3rem auto;
-  font-family: var(--font-serif-body);
-  font-size: 1.15rem;
+.section-desc,
+.section-subtitle,
+.services-lead {
+  max-width: 820px;
+  margin: 0 auto 3rem auto;
+  font-family: var(--font-sans);
+  font-size: clamp(0.94rem, 1.05vw, 1.08rem);
   line-height: 1.7;
   color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Unified Luxury Golden Hairline & Top Radiance for All Main Sections */
+.about-section,
+.how-it-works,
+.services-section,
+.healing-section,
+.learn-tarot-section,
+.why-section,
+.testimonials-section,
+.stones-section,
+.faq-section,
+.final-cta-section {
+  position: relative;
+  border-top: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.about-section::before,
+.how-it-works::before,
+.services-section::before,
+.healing-section::before,
+.learn-tarot-section::before,
+.why-section::before,
+.testimonials-section::before,
+.stones-section::before,
+.faq-section::before,
+.final-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(850px, 80%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55) 50%, transparent);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* Glassmorphism Panel Setup */
@@ -754,7 +858,7 @@ a {
 /* 7. About Section Layout & Biography Modal */
 .about-section {
   background: radial-gradient(circle at 10% 80%, var(--purple-dark) 0%, transparent 60%);
-  border-top: 1px solid rgba(212, 175, 55, 0.05);
+  position: relative;
 }
 
 .about-grid {
@@ -936,15 +1040,15 @@ a {
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 50%;
-  background: rgba(94, 28, 168, 0.15);
-  border: 1px solid rgba(94, 28, 168, 0.3);
+  background: rgba(0, 92, 230, 0.15);
+  border: 1px solid rgba(0, 144, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
   font-size: 1.6rem;
   color: var(--gold-primary);
-  box-shadow: inset 0 0 14px rgba(94, 28, 168, 0.2);
+  box-shadow: inset 0 0 14px rgba(0, 92, 230, 0.2);
   transition: var(--transition-bounce);
 }
 
@@ -1092,7 +1196,7 @@ a {
   padding-bottom: 1.2rem;
   margin-bottom: 1.2rem;
   width: 100%;
-  min-height: 95px;
+  min-height: 105px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1197,7 +1301,7 @@ a {
 /* Recommended/Special cards styling */
 .popular-card {
   border-color: var(--gold-primary);
-  background: radial-gradient(circle at top right, rgba(94, 28, 168, 0.15) 0%, var(--glass-bg) 75%);
+  background: radial-gradient(circle at top right, rgba(0, 92, 230, 0.15) 0%, var(--glass-bg) 75%);
   box-shadow: var(--glass-shadow), 0 0 25px rgba(212, 175, 55, 0.08);
 }
 
@@ -1222,7 +1326,6 @@ a {
 /* 10. Healing & Transformation Section alignment */
 .healing-section {
   background: radial-gradient(circle at 10% 50%, var(--purple-dark) 0%, transparent 60%);
-  border-top: 1px solid rgba(212, 175, 55, 0.05);
   position: relative;
 }
 
@@ -1233,13 +1336,350 @@ a {
   margin-bottom: 2.5rem;
 }
 
+/* Mandatory Energy Assessment Protocol Notice Banner */
+.healing-protocol-banner {
+  background: linear-gradient(135deg, rgba(5, 20, 58, 0.95) 0%, rgba(2, 8, 23, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  padding: 2.2rem 2.2rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55), 0 0 30px rgba(212, 175, 55, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.healing-protocol-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-gradient);
+}
+
+.protocol-header {
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto 1.8rem;
+}
+
+.protocol-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 0.9rem;
+}
+
+.protocol-title {
+  font-family: var(--font-serif-header);
+  font-size: 1.55rem;
+  color: var(--white);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+}
+
+.protocol-lead {
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: #d1d5db;
+  margin-bottom: 0;
+}
+
+.protocol-lead strong {
+  color: #fff;
+}
+
+.protocol-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.protocol-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.protocol-card:hover {
+  background: rgba(212, 175, 55, 0.06);
+  border-color: rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+}
+
+.protocol-card-icon {
+  font-size: 1.4rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.7rem;
+}
+
+.protocol-card h4 {
+  font-size: 1.02rem;
+  color: var(--white);
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.protocol-card p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.protocol-card p strong {
+  color: #f3f4f6;
+}
+
+.protocol-cta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.protocol-cta-text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: #e5e7eb;
+}
+
+.healing-intro-note {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 2.2rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* Healing Grid & Cards */
 .healing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
+.healing-item-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 1.7rem 2.2rem;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  height: 100%;
+}
+
+.healing-item-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.healing-item-card.highlight-border {
+  border-color: var(--gold-primary);
+  background: linear-gradient(180deg, rgba(8, 30, 89, 0.5) 0%, rgba(2, 8, 23, 0.85) 100%);
+  box-shadow: var(--glass-shadow), 0 0 25px rgba(0, 92, 230, 0.25);
+}
+
+.healing-card-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-gradient);
+  color: var(--bg-dark);
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  padding: 0.32rem 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.healing-card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.healing-card-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.9rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: var(--gold-primary);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.healing-card-header h3 {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+.healing-card-sub {
+  font-size: 0.78rem;
+  color: var(--gold-primary);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.healing-price-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.healing-price-wrap .original-price {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.healing-price-wrap .offer-price {
+  font-family: var(--font-serif-header);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+}
+
+.healing-price-note {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  display: block;
+  line-height: 1.4;
+}
+
+.healing-card-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.healing-special-callout {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fef08a;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.healing-benefits-wrap {
+  margin-bottom: 1.8rem;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.healing-benefits-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.healing-benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-left: 0;
+  margin: 0;
+}
+
+.healing-benefits-list li {
+  font-size: 0.84rem;
+  color: #e2e8f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.45;
+}
+
+.healing-benefits-list li i {
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.healing-item-card .btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Legacy healing card fallback support */
 .healing-category-card {
   height: 100%;
   padding: 2.4rem 1.8rem 2.2rem;
@@ -1302,14 +1742,265 @@ a {
 
 .highlight-border {
   border-color: var(--gold-primary);
-  background: linear-gradient(180deg, rgba(29, 7, 51, 0.45) 0%, rgba(11, 2, 23, 0.8) 100%);
-  box-shadow: var(--glass-shadow), 0 0 25px rgba(94, 28, 168, 0.2);
+  background: linear-gradient(180deg, rgba(8, 30, 89, 0.45) 0%, rgba(2, 8, 23, 0.8) 100%);
+  box-shadow: var(--glass-shadow), 0 0 25px rgba(0, 92, 230, 0.2);
+}
+
+/* ============================================================
+   10b. LEARN TAROT SECTION & ACADEMY STYLES
+   ============================================================ */
+.learn-tarot-section {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, rgba(0, 92, 230, 0.22) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 55%),
+              linear-gradient(180deg, var(--bg-dark) 0%, #05143a 50%, var(--bg-dark) 100%);
+}
+
+.tarot-courses-stack {
+  max-width: 1080px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tarot-course-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 2.2rem 2.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(0, 92, 230, 0.16);
+  display: grid;
+  grid-template-columns: 1.15fr auto 1.45fr auto;
+  align-items: center;
+  gap: 2.2rem;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+}
+
+.tarot-course-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.tarot-course-card.featured-course {
+  border-color: var(--gold-primary);
+  background: radial-gradient(circle at top right, rgba(0, 92, 230, 0.28) 0%, rgba(5, 20, 58, 0.9) 100%);
+  box-shadow: var(--glass-shadow), 0 0 35px rgba(212, 175, 55, 0.2);
+}
+
+.course-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.course-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+}
+
+.course-title {
+  font-family: var(--font-serif-header);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--white);
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.course-duration-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50px;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #fef08a;
+  width: fit-content;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.course-divider-col {
+  width: 1px;
+  height: 85%;
+  background: rgba(255, 255, 255, 0.12);
+  align-self: stretch;
+}
+
+.course-mid-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.course-curriculum-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.course-curriculum-list li {
+  font-size: 0.92rem;
+  color: #e2e8f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.5;
+}
+
+.course-curriculum-list li i {
+  color: var(--gold-primary);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.course-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.1rem;
+  min-width: 190px;
+}
+
+.course-price-box {
+  background: #000000;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 10px;
+  padding: 0.75rem 1.3rem;
+  text-align: right;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(212, 175, 55, 0.18);
+  width: 100%;
+}
+
+.course-orig-price {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+  display: block;
+  opacity: 0.8;
+}
+
+.course-offer-price {
+  font-family: var(--font-serif-header);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--gold-primary);
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
+  line-height: 1.15;
+}
+
+.course-btn {
+  white-space: nowrap;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.8rem;
+}
+
+.academy-cta-wrap {
+  text-align: center;
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.academy-cta-wrap p {
+  font-size: 0.96rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Dedicated Learn Tarot Page Specific Styles */
+.academy-hero-section {
+  padding: 140px 0 5rem;
+  position: relative;
+  background: radial-gradient(circle at 50% 20%, rgba(0, 92, 230, 0.3) 0%, transparent 70%),
+              linear-gradient(180deg, var(--bg-dark) 0%, #05143a 100%);
+  text-align: center;
+}
+
+.academy-hero-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.academy-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1150px;
+  margin: 3.5rem auto 0;
+}
+
+.academy-highlight-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 2rem 1.4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.academy-highlight-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px);
+}
+
+.academy-highlight-icon {
+  font-size: 2.2rem;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.academy-highlight-card h4 {
+  font-size: 1.05rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.academy-highlight-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* 11. Why Choose Section alignment */
 .why-section {
   background: linear-gradient(180deg, transparent 0%, var(--purple-dark) 50%, transparent 100%);
-  border-top: 1px solid rgba(212, 175, 55, 0.05);
   position: relative;
 }
 
@@ -1326,6 +2017,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .why-icon {
@@ -1338,6 +2030,10 @@ a {
   font-size: 1.2rem;
   margin-bottom: 0.7rem;
   letter-spacing: 0.04em;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .why-item p {
@@ -1349,7 +2045,6 @@ a {
 /* 12. Testimonials Carousel Layout Refinements */
 .testimonials-section {
   background: radial-gradient(circle at 50% 50%, var(--purple-dark) 0%, transparent 70%);
-  border-top: 1px solid rgba(212, 175, 55, 0.05);
   position: relative;
 }
 
@@ -1492,7 +2187,6 @@ a {
 
 /* 13. FAQ Accordion Alignment */
 .faq-section {
-  border-top: 1px solid rgba(212, 175, 55, 0.05);
   position: relative;
 }
 
@@ -1508,7 +2202,7 @@ a {
 .faq-item {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  background: rgba(11, 2, 23, 0.55);
+  background: rgba(5, 20, 58, 0.65);
   overflow: hidden;
   transition: var(--transition-smooth);
 }
@@ -1565,21 +2259,20 @@ a {
 
 /* 14. Final Call-To-Action Layout */
 .final-cta-section {
-  border-top: 1px solid rgba(212, 175, 55, 0.05);
   position: relative;
 }
 
 .cta-banner {
-  padding: 4.5rem 4rem;
+  padding: clamp(2.5rem, 4vw, 4.5rem) clamp(1.8rem, 3.5vw, 4rem);
   display: grid;
   grid-template-columns: 200px 1fr 160px;
   align-items: center;
-  gap: 3.5rem;
+  gap: clamp(1.8rem, 3vw, 3.5rem);
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   border-color: rgba(212, 175, 55, 0.22);
-  background: radial-gradient(circle at center, rgba(94, 28, 168, 0.15) 0%, rgba(11, 2, 23, 0.85) 100%);
+  background: radial-gradient(circle at center, rgba(0, 92, 230, 0.15) 0%, rgba(2, 8, 23, 0.85) 100%);
 }
 
 .cta-graphics-left {
@@ -1593,7 +2286,7 @@ a {
   max-width: 200px;
   height: auto;
   border-radius: 10px;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6)) drop-shadow(0 0 15px rgba(94, 28, 168, 0.35));
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6)) drop-shadow(0 0 15px rgba(0, 92, 230, 0.35));
   border: 1px solid rgba(212, 175, 55, 0.15);
 }
 
@@ -1822,15 +2515,17 @@ a {
   height: 100%;
   z-index: 1000;
   background: rgba(4, 1, 8, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
-  padding: 2rem;
+  padding: clamp(0.75rem, 2vw, 2rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-overlay.active {
@@ -1841,15 +2536,41 @@ a {
 .modal-card {
   width: 100%;
   max-width: 660px;
-  max-height: 90vh;
+  max-height: 88vh;
+  max-height: 88dvh;
   overflow-y: auto;
-  border-radius: 12px;
-  padding: 2.2rem 2rem;
+  border-radius: 16px;
+  padding: clamp(1.6rem, 3vw, 2.5rem);
   position: relative;
   transform: scale(0.92) translateY(25px);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  border-color: rgba(212, 175, 55, 0.28);
-  background: radial-gradient(circle at top right, rgba(94, 28, 168, 0.16) 0%, var(--purple-dark) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: radial-gradient(circle at top right, rgba(0, 92, 230, 0.22) 0%, var(--purple-dark) 100%);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.18);
+  margin: auto;
+}
+
+/* Custom Sleek Gold Scrollbar for Modal and Nav */
+.modal-card::-webkit-scrollbar,
+.nav-menu.active::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-card::-webkit-scrollbar-track,
+.nav-menu.active::-webkit-scrollbar-track {
+  background: rgba(2, 7, 24, 0.6);
+  border-radius: 10px;
+}
+
+.modal-card::-webkit-scrollbar-thumb,
+.nav-menu.active::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.45);
+  border-radius: 10px;
+}
+
+.modal-card::-webkit-scrollbar-thumb:hover,
+.nav-menu.active::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
 }
 
 .modal-overlay.active .modal-card {
@@ -2013,8 +2734,8 @@ label {
   display: flex;
   align-items: flex-start;
   gap: 0.95rem;
-  background: rgba(94, 28, 168, 0.08);
-  border: 1px solid rgba(94, 28, 168, 0.2);
+  background: rgba(0, 92, 230, 0.08);
+  border: 1px solid rgba(0, 92, 230, 0.2);
   padding: 0.95rem 1.2rem;
   border-radius: 4px;
   margin: 2.2rem 0;
@@ -2039,7 +2760,7 @@ label {
 }
 
 .modal-card::-webkit-scrollbar-track {
-  background: rgba(5, 0, 10, 0.3);
+  background: rgba(2, 8, 23, 0.6);
 }
 
 .modal-card::-webkit-scrollbar-thumb {
@@ -2092,8 +2813,8 @@ body::-webkit-scrollbar-thumb {
 /* ==========================================================================
    18. Highly Scaled Responsive Layout Media Queries
    ========================================================================== */
-/* --- 1200px: Large Tablets, Laptops & Small Desktops --- */
-@media (max-width: 1200px) {
+/* --- 1250px: Laptops, Zoom (125%-150%) & Small Desktops --- */
+@media (max-width: 1250px) {
   .hero-title {
     font-size: 2.3rem;
     line-height: 1.25;
@@ -2103,15 +2824,15 @@ body::-webkit-scrollbar-thumb {
     line-height: 1.65;
   }
   .hero-visual-viewport {
-    height: 480px;
+    height: 460px;
   }
   .mandala-container {
-    width: 380px;
-    height: 380px;
+    width: 360px;
+    height: 360px;
   }
   .tarot-card-3d {
-    width: 170px;
-    height: 280px;
+    width: 160px;
+    height: 265px;
   }
   .card-star {
     transform: translate3d(-45px, -15px, 30px) rotateY(-8deg) rotateZ(-5deg);
@@ -2128,44 +2849,7 @@ body::-webkit-scrollbar-thumb {
     50% { transform: translate3d(65px, 10px, 15px) rotateY(7deg) rotateZ(2deg); }
   }
   
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 880px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .pricing-grid.grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .healing-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .stones-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .stones-trust-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3.5rem;
-  }
-}
-
-/* --- 1150px: Mobile Drawer Navigation (Guarantees all 8 nav links fit comfortably) --- */
-@media (max-width: 1150px) {
+  /* Mobile Drawer Navigation (Engages at <= 1250px for zero header collision) */
   .mobile-nav-toggle {
     display: block;
   }
@@ -2191,25 +2875,45 @@ body::-webkit-scrollbar-thumb {
     border-bottom: 1px solid var(--glass-border);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 2.5rem 1.5rem 3.5rem;
+    padding: 2.2rem 1.5rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .nav-menu ul {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 100%;
-    gap: 1.6rem;
+    min-height: auto;
+    width: 100%;
+    gap: 1.4rem;
   }
   
   .nav-link {
     font-size: 1.05rem;
     letter-spacing: 0.14em;
     padding: 0.5rem 1rem;
+    text-align: center;
   }
   
   .nav-actions {
-    display: none;
+    display: none !important;
+  }
+
+  .mobile-drawer-cta {
+    display: block !important;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 290px;
+    text-align: center;
+  }
+
+  .mobile-drawer-cta .btn {
+    width: 100%;
+    white-space: nowrap !important;
+    padding: 0.85rem 1.5rem;
+    box-shadow: 0 0 25px var(--gold-glow);
   }
   
   .mobile-nav-toggle[aria-expanded="true"] .hamburger {
@@ -2222,6 +2926,60 @@ body::-webkit-scrollbar-thumb {
   .mobile-nav-toggle[aria-expanded="true"] .hamburger::after {
     transform: rotate(-45deg);
     top: 0;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pricing-grid.grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .healing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .protocol-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stones-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stones-trust-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+  }
+
+  .tarot-course-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1.8rem;
+  }
+  .course-divider-col {
+    display: none;
+  }
+  .course-right-col {
+    align-items: stretch;
+    width: 100%;
+  }
+  .course-price-box {
+    text-align: center;
   }
 }
 
@@ -2237,6 +2995,7 @@ body::-webkit-scrollbar-thumb {
   .how-it-works,
   .services-section,
   .healing-section,
+  .learn-tarot-section,
   .why-section,
   .testimonials-section,
   .stones-section,
@@ -2326,6 +3085,25 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     padding: 2.5rem 2rem;
   }
+  
+  .tarot-course-card {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding: 2rem 1.6rem;
+  }
+  .course-divider-col {
+    display: none;
+  }
+  .course-right-col {
+    align-items: stretch;
+    width: 100%;
+  }
+  .course-price-box {
+    text-align: center;
+  }
+  .academy-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* --- 768px: Tablets & Landscape Phones --- */
@@ -2377,6 +3155,30 @@ body::-webkit-scrollbar-thumb {
     max-width: 460px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .protocol-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .protocol-cta-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .protocol-cta-text {
+    flex-direction: column;
+    text-align: center;
+  }
+  .protocol-title {
+    font-size: 1.3rem;
+  }
+  .healing-protocol-banner {
+    padding: 1.8rem 1.4rem;
+  }
+  .academy-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-title {
+    font-size: 1.18rem;
   }
   
   .stones-grid {
@@ -3478,11 +4280,35 @@ body::-webkit-scrollbar-thumb {
    ============================================================ */
 .stones-section {
   position: relative;
-  background: radial-gradient(circle at 50% 20%, rgba(94, 28, 168, 0.22) 0%, transparent 65%),
+  background: radial-gradient(circle at 50% 20%, rgba(0, 92, 230, 0.22) 0%, transparent 65%),
               radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.08) 0%, transparent 55%),
               radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.07) 0%, transparent 55%);
-  border-top: 1px solid rgba(212, 175, 55, 0.12);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.title-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -0.5rem auto 1.5rem auto;
+  gap: 1rem;
+}
+
+.title-divider::before,
+.title-divider::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6));
+}
+
+.title-divider::after {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.gem-symbol {
+  color: var(--gold-primary);
+  font-size: 0.95rem;
+  filter: drop-shadow(0 0 6px var(--gold-glow));
 }
 
 .stones-trust-strip {

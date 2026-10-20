@@ -15,16 +15,16 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#020716">
   
-  <!-- Premium Google Fonts -->
+  <!-- Premium Google Fonts: Cinzel Decorative, Cinzel, Cormorant Garamond, Plus Jakarta Sans, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons for Mystical Elements -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css?v=3.0">
+  <link rel="stylesheet" href="styles.css?v=3.2">
 
   <!-- Three.js for 3D Intro Animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -96,15 +96,19 @@
           <li><a href="#about" class="nav-link">ABOUT</a></li>
           <li><a href="#services" class="nav-link">SERVICES</a></li>
           <li><a href="#healing" class="nav-link">HEALING</a></li>
+          <li><a href="#learn-with-me" class="nav-link">LEARN WITH ME</a></li>
           <li><a href="#healing-stones" class="nav-link">GEMSTONES</a></li>
           <li><a href="#why-choose" class="nav-link">WHY ME</a></li>
           <li><a href="#testimonials" class="nav-link">REVIEWS</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
+        <div class="mobile-drawer-cta">
+          <a href="#services" class="btn btn-gold-filled" onclick="openBookingModal('General consultation', 'Video Call'); closeMobileNav();">BOOK A READING <i class="fab fa-whatsapp"></i></a>
+        </div>
       </nav>
 
       <div class="nav-actions">
-        <a href="#services" class="btn btn-gold btn-nav" onclick="openBookingModal('General consultation', 'Video Call')">BOOK A READING</a>
+        <a href="#services" class="btn btn-gold btn-nav" onclick="openBookingModal('General consultation', 'Video Call')">BOOK A READING <i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </header>
@@ -326,6 +330,9 @@
     <div class="section-container">
       <span class="section-kicker text-center">THE PATHWAY</span>
       <h2 class="section-title text-center">YOUR JOURNEY, <span class="gold-text">SIMPLIFIED</span></h2>
+      <p class="section-desc text-center">
+        Three intentional steps to prepare your energetic aura and receive life-altering clarity from Ishita Kothari.
+      </p>
       
       <div class="steps-grid">
         <!-- Step 1 -->
@@ -686,16 +693,57 @@
   <!-- Healing & Energy Work Section (High Ticket Positioning) -->
   <section id="healing" class="healing-section">
     <div class="section-container">
-      <span class="section-kicker text-center">SACRED WORK</span>
-      <h2 class="section-title text-center">BEYOND READINGS:<br><span class="gold-text">DEEP HEALING & TRANSFORMATION</span></h2>
+      <span class="section-kicker text-center">SACRED WORK &amp; TRANSFORMATION</span>
+      <h2 class="section-title text-center">BEYOND READINGS:<br><span class="gold-text">SACRED HEALINGS &amp; SPIRITUAL SPELLS</span></h2>
       <p class="section-desc text-center">
         Step into the role of active co-creator of your destiny. Readings diagnose the energy; healing actively restructures it.
       </p>
 
       <!-- Healing Sub-Navigation Tabs for Single Screen View -->
       <div class="healing-tabs">
-        <button class="tab-btn active" id="btn-healing-modalities" onclick="switchHealingTab('modalities')"><i class="fas fa-spa gold-text"></i> Sacred Healing Modalities</button>
+        <button class="tab-btn active" id="btn-healing-modalities" onclick="switchHealingTab('modalities')"><i class="fas fa-spa gold-text"></i> Sacred Healings &amp; Spells</button>
         <button class="tab-btn" id="tab-btn-chakra" onclick="switchHealingTab('chakra')"><i class="fas fa-circle-notch gold-text"></i> Interactive 7-Chakra Explorer</button>
+      </div>
+
+      <!-- Mandatory Energy Assessment Protocol Notice Banner -->
+      <div class="healing-protocol-banner glass-panel" id="healing-protocol-banner">
+        <div class="protocol-header">
+          <span class="protocol-badge"><i class="fas fa-sparkles gold-text"></i> SACRED ENERGY PREREQUISITE</span>
+          <h3 class="protocol-title">Energy Assessment Protocol Prior to Healings &amp; Spells</h3>
+          <p class="protocol-lead">
+            Please note that <strong>all healings and spiritual spells are performed strictly after checking energies through an initial diagnostic session</strong>. Energy assessment plays a major role in decision making of which healing or spell needs to be done, the exact amount of sittings required according to your energies, and analyzing potential and performance in reaching the desired final outcome.
+          </p>
+        </div>
+
+        <div class="protocol-cards-grid">
+          <div class="protocol-card">
+            <div class="protocol-card-icon"><i class="fas fa-lock"></i></div>
+            <h4>Prerequisite Energy Check</h4>
+            <p>Healings <strong>cannot be performed without checking energies</strong> first. This ensures 100% personalized, safe, and aligned spiritual intervention.</p>
+          </div>
+
+          <div class="protocol-card">
+            <div class="protocol-card-icon"><i class="fas fa-tags"></i></div>
+            <h4>Transparent Pricing Range</h4>
+            <p>Prices for healings and spiritual spells <strong>START FROM ₹5,000 INR up to ₹45,000 INR</strong>, determined by energy diagnosis &amp; required sittings.</p>
+          </div>
+
+          <div class="protocol-card">
+            <div class="protocol-card-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+            <h4>Bespoke Energetic Rituals</h4>
+            <p>There are <strong>plenty of customized healings and spells</strong> that could be performed on the basis of your unique energetic blueprint.</p>
+          </div>
+        </div>
+
+        <div class="protocol-cta-bar">
+          <div class="protocol-cta-text">
+            <i class="fas fa-info-circle gold-text"></i>
+            <span>Ready to check your energies and discover your aligned healing or spell?</span>
+          </div>
+          <button class="btn btn-gold-filled" onclick="openBookingModal('Energy Check & Consultation Session', 'Energy Assessment')">
+            CHECK YOUR ENERGIES FIRST <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Interactive 7-Chakra Energy Alignment Explorer -->
@@ -735,73 +783,442 @@
         </div>
       </div>
 
+      <!-- Core Healings & Spells Showcase Grid -->
+      <p class="healing-intro-note" id="healing-intro-note">
+        <i class="fas fa-sparkles gold-text"></i> Some main healings &amp; spells with current special prices are showcased below:
+      </p>
+
       <div class="healing-grid" id="healing-grid-container">
         
-        <!-- Category 1: Energy Healing -->
-        <div class="healing-category-card glass-panel">
-          <div class="healing-cat-header">
-            <div class="h-icon"><i class="fas fa-spa"></i></div>
-            <h3>Energy Healing Sessions</h3>
+        <!-- 1. Detoxification / Cleansing and Protection Spell -->
+        <div class="healing-item-card glass-panel">
+          <div class="healing-card-badge">AURA RESET &amp; PURIFICATION</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-shield-halved"></i></div>
+            <h3>Detoxification, Cleansing &amp; Protection Spell</h3>
+            <span class="healing-card-sub">Mind, Body &amp; Space Purification</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹7,777</span>
+              <span class="offer-price">₹4,999</span>
+            </div>
           </div>
-          <ul class="healing-list">
-            <li>
-              <strong>Chakra Balancing & Aura Cleansing</strong>
-              <p>Re-calibrates your 7 energetic centers, sweeps away stagnant debris, and restores glowing psychological and physiological harmony.</p>
-            </li>
-            <li>
-              <strong>Cord Cutting Healing</strong>
-              <p>Sever heavy emotional cords and toxic attachments from past lovers or heavy connections, reclaiming your personal energetic sovereignty.</p>
-            </li>
-            <li>
-              <strong>Inner Child Healing</strong>
-              <p>Gently travel to the root of childhood emotional blockages, healing trauma to rebuild profound self-worth, courage, and creative trust.</p>
-            </li>
-            <li>
-              <strong>Protection & Energy Shielding</strong>
-              <p>Erect a highly structured, impenetrable spiritual shield around your energetic field, safeguarding you against external draining currents.</p>
-            </li>
-          </ul>
-          <button class="btn btn-outline w-full mt-auto" onclick="openBookingModal('Energy Healing Session', 'Spiritual Healing')">BEGIN HEALING JOURNEY</button>
+          <p class="healing-card-desc">
+            Ritual practices intended to cleanse a person’s mind, body, or living space of negative energy, stagnant vibes, and emotional clutter. While they have no proven physical health benefits, practitioners value them for their psychological and spiritual advantages.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Removes Negative Energy</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Resets Your Aura</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Releases Emotional Baggage</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Reduces Stress &amp; Anxiety</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Breaks Bad Habits / Patterns</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Encourages Self-Care</li>
+            </ul>
+          </div>
+          <button class="btn btn-card-booking" onclick="openBookingModal('Detoxification, Cleansing & Protection Spell (₹4,999)', 'Spiritual Healing & Spellwork')">
+            BOOK CLEANSING SPELL <i class="fab fa-whatsapp"></i>
+          </button>
         </div>
 
-        <!-- Category 2: Manifestation Coaching -->
-        <div class="healing-category-card glass-panel highlight-border">
-          <div class="healing-cat-header">
-            <div class="h-icon"><i class="fas fa-bolt"></i></div>
-            <h3>Manifestation & Coaching</h3>
+        <!-- 2. Abundance Spell -->
+        <div class="healing-item-card glass-panel">
+          <div class="healing-card-badge">PROSPERITY &amp; SUCCESS</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-coins"></i></div>
+            <h3>Abundance Spell</h3>
+            <span class="healing-card-sub">Wealth Consciousness &amp; Growth</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹9,999</span>
+              <span class="offer-price">₹7,777</span>
+            </div>
           </div>
-          <ul class="healing-list">
-            <li>
-              <strong>Manifestation Alignment Session</strong>
-              <p>Diagnose deep-seated ancestral or subconscious lack blockages, aligning your vibrational state using custom rituals to manifest your ultimate goals.</p>
-            </li>
-            <li>
-              <strong>Reality Shift Coaching (1:1)</strong>
-              <p>Intensive, personalized ongoing mentorship. Blends high-vibrational energetic alignment, practical accountability strategies, and spiritual mindsets.</p>
-            </li>
-          </ul>
-          <button class="btn btn-gold-filled w-full mt-auto" onclick="openBookingModal('Reality Shift Coaching', '1:1 Mentorship')">APPLY FOR 1:1 COACHING</button>
+          <p class="healing-card-desc">
+            Abundance spells and prosperity rituals provide psychological, motivational, and spiritual benefits rather than direct financial outcomes, shifting your energetic state into clarity, empowerment, and receptivity.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Increased Confidence &amp; Positive Mindset</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Reduced Financial Anxiety</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Proactive Behavior &amp; Goal Clarity</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Holistic Well-Being</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Releasing Debts &amp; Clearing Loans</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Promotes Career Advancements</li>
+            </ul>
+          </div>
+          <button class="btn btn-card-booking" onclick="openBookingModal('Abundance Spell (₹7,777)', 'Spiritual Healing & Spellwork')">
+            BOOK ABUNDANCE SPELL <i class="fab fa-whatsapp"></i>
+          </button>
         </div>
 
-        <!-- Category 3: Advanced Occult -->
-        <div class="healing-category-card glass-panel">
-          <div class="healing-cat-header">
-            <div class="h-icon"><i class="fas fa-scroll"></i></div>
-            <h3>Occult & Advanced Services</h3>
+        <!-- 3. Love Spells -->
+        <div class="healing-item-card glass-panel popular-card">
+          <div class="healing-card-badge">HEART CHAKRA &amp; ROMANCE</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-heart"></i></div>
+            <h3>Love Spells</h3>
+            <span class="healing-card-sub">Romance, Attraction &amp; Deep Bonds</span>
+            <div class="healing-price-wrap">
+              <span class="offer-price">₹7,777 – ₹24,999</span>
+            </div>
+            <span class="healing-price-note">Starting from ₹7,777 up to ₹24,999 (depending on which spell is performed)</span>
           </div>
-          <ul class="healing-list">
-            <li>
-              <strong>Spell Work & Ritual Guidance</strong>
-              <p>Custom-crafted intentions, candle operations, and planetary alignments. Focuses purely on high-vibrational love, shielding, and professional expansion.</p>
-            </li>
-            <li>
-              <strong>Vastu Consultation</strong>
-              <p>A complete structural energy analysis of your home or corporate office. Merges ancient orientation wisdom with remedies that trigger financial abundance.</p>
-            </li>
-          </ul>
-          <button class="btn btn-outline w-full mt-auto" onclick="openBookingModal('Vastu or Spellwork Consult', 'Advanced Occult')">INQUIRE FOR ADVANCED WORK</button>
+          <p class="healing-card-desc">
+            Love spells are ritual practices or energetic workings intended to influence romance, attraction, and emotional bonds, cultivating deep self-worth and clearing obstacles to true intimacy.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Self-Love &amp; Confidence</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Removing Blockages</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Energy Clearing</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Attracting New Partners</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Reconciliation and Closure</li>
+            </ul>
+          </div>
+          <button class="btn btn-gold-filled" onclick="openBookingModal('Love Spells (Starting from ₹7,777 to ₹24,999)', 'Spiritual Healing & Spellwork')">
+            INQUIRE FOR LOVE SPELL <i class="fab fa-whatsapp"></i>
+          </button>
         </div>
 
+        <!-- 4. TRAUMA HEALING SPELLS -->
+        <div class="healing-item-card glass-panel">
+          <div class="healing-card-badge">EMOTIONAL LIBERATION</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-seedling"></i></div>
+            <h3>Trauma Healing Spells</h3>
+            <span class="healing-card-sub">Inner Rebirth &amp; Symbolic Closure</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹14,999</span>
+              <span class="offer-price">₹8,888</span>
+            </div>
+          </div>
+          <p class="healing-card-desc">
+            Dedicated ritual work focusing on intent and focus, symbolic closure, mindfulness, and grounding. Fosters profound empowerment—letting go, accepting, and moving on into a happy and healthy life cycle.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Intent and Focus</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Symbolic Closure</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Mindfulness and Grounding</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Empowerment</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Letting Go, Accepting &amp; Moving On</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Moving into a Happy &amp; Healthy Life Cycle</li>
+            </ul>
+          </div>
+          <button class="btn btn-card-booking" onclick="openBookingModal('Trauma Healing Spell (₹8,888)', 'Spiritual Healing & Spellwork')">
+            BEGIN TRAUMA HEALING <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <!-- 5. Planetary Healings -->
+        <div class="healing-item-card glass-panel highlight-border">
+          <div class="healing-card-badge">COSMIC &amp; VEDIC BALANCE</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-globe"></i></div>
+            <h3>Planetary Healings</h3>
+            <span class="healing-card-sub">Cosmic &amp; Vedic Graha Alignment</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹9,999</span>
+              <span class="offer-price">₹8,888</span>
+            </div>
+          </div>
+          <div class="healing-special-callout">
+            <i class="fas fa-star-of-david gold-text"></i> BEST FOR PEOPLE IN ANY DASHA’S
+          </div>
+          <p class="healing-card-desc">
+            Referred to either as planetary health (ecological and environmental well-being) or planetary/astrological alignment (cosmic or Vedic balancing)—delivers distinct benefits across physical, mental, and environmental spheres.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Better Physical Health &amp; Lower Risk of Disease</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Deep Mental Restoration &amp; Emotional Stability</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Settling Down of Grahas and Balancing It to Avoid the Negative Instances and Suppress It</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Sustainable Feedback Loop</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Holistic Integration</li>
+            </ul>
+          </div>
+          <button class="btn btn-gold-filled" onclick="openBookingModal('Planetary Healing & Graha Alignment (₹8,888)', 'Spiritual Healing & Spellwork')">
+            BOOK PLANETARY HEALING <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <!-- 6. THIRD PARTY REMOVAL / BANISHING SPELL / CORD CUTTING (₹9,999) -->
+        <div class="healing-item-card glass-panel">
+          <div class="healing-card-badge">RELATIONSHIP ENERGETICS</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-link-slash"></i></div>
+            <h3>Third Party Removal / Banishing Spell / Cord Cutting</h3>
+            <span class="healing-card-sub">Energy Management &amp; Relationship Dynamics</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹18,888</span>
+              <span class="offer-price">₹9,999</span>
+            </div>
+          </div>
+          <p class="healing-card-desc">
+            In spiritual, energetic, and esoteric practices, third-party removals, cord-cutting, and banishing spells are distinct rituals used to manage your personal energy and clean up relationship dynamics.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Dissolves Interference</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Restores Privacy and Intimacy</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Reclaims Your Personal Power</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Provides Emotional Closure</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Fosters Independence</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Clears Stagnant or Malicious Energy and Stops Re-Attachment</li>
+            </ul>
+          </div>
+          <button class="btn btn-card-booking" onclick="openBookingModal('Third Party Removal, Banishing & Cord Cutting (₹9,999)', 'Spiritual Healing & Spellwork')">
+            BOOK CORD CUTTING &amp; BANISHING <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <!-- 7. SOUND HEALING (₹14,999) -->
+        <div class="healing-item-card glass-panel">
+          <div class="healing-card-badge">VIBRATIONAL FREQUENCIES</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-bell"></i></div>
+            <h3>Sound Healing</h3>
+            <span class="healing-card-sub">Focused-Awareness Acoustic Therapy</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹18,888</span>
+              <span class="offer-price">₹14,999</span>
+            </div>
+          </div>
+          <p class="healing-card-desc">
+            Deep relaxation, lower stress and anxiety, and quiet the mind by giving the brain an auditory focus. Offers a form of focused-awareness meditation that quiets racing thoughts and emotional overload.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Deep Relaxation &amp; Cortisol Reduction</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Lower Stress and Anxiety</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Quiet the Mind by Giving the Brain an Auditory Focus</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Offers Focused-Awareness Meditation</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Quiets Racing Thoughts and Emotional Overload</li>
+            </ul>
+          </div>
+          <button class="btn btn-card-booking" onclick="openBookingModal('Sound Healing Session (₹14,999)', 'Spiritual Healing & Spellwork')">
+            BOOK SOUND HEALING <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <!-- 8. CHAKRA HEALINGS / REIKI (₹24,999) -->
+        <div class="healing-item-card glass-panel">
+          <div class="healing-card-badge">ENERGY FIELD ALIGNMENT</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-spa"></i></div>
+            <h3>Chakra Healings / Reiki</h3>
+            <span class="healing-card-sub">Subtle Energy Balancing &amp; Vitality</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹33,333</span>
+              <span class="offer-price">₹24,999</span>
+            </div>
+          </div>
+          <p class="healing-card-desc">
+            Reiki and chakra healing are complementary energy practices aimed at balancing the body's subtle energy fields, promoting deep relaxation, and supporting emotional and physical well-being.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Stress and Anxiety Reduction</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Pain and Fatigue Relief</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Emotional Well-Being</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Improved Sleep Quality</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Mind-Body Connection</li>
+            </ul>
+          </div>
+          <button class="btn btn-card-booking" onclick="openBookingModal('Chakra Healings / Reiki (₹24,999)', 'Spiritual Healing & Spellwork')">
+            BOOK CHAKRA / REIKI <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <!-- 9. PRANIC HEALINGS (₹24,999) -->
+        <div class="healing-item-card glass-panel highlight-border">
+          <div class="healing-card-badge">NO-TOUCH ENERGY SYSTEM</div>
+          <div class="healing-card-header">
+            <div class="healing-card-icon"><i class="fas fa-hands-holding-circle"></i></div>
+            <h3>Pranic Healings</h3>
+            <span class="healing-card-sub">Master Choa Kok Sui Energy System</span>
+            <div class="healing-price-wrap">
+              <span class="original-price">₹33,333</span>
+              <span class="offer-price">₹24,999</span>
+            </div>
+          </div>
+          <div class="healing-special-callout">
+            <i class="fas fa-heart-pulse gold-text"></i> IT ALSO HELPS IN GIVING POWER TO RESIST AND SURVIVE FOR PEOPLE WITH MAJOR HEALTH ISSUES
+          </div>
+          <p class="healing-card-desc">
+            Pranic Healing is a no-touch energy system created by Master Choa Kok Sui that works by cleansing and energizing the body's aura and chakras to accelerate natural healing.
+          </p>
+          <div class="healing-benefits-wrap">
+            <span class="healing-benefits-title"><i class="fas fa-check-circle gold-text"></i> Key Benefits</span>
+            <ul class="healing-benefits-list">
+              <li><i class="fas fa-sparkles gold-text"></i> Master Choa Kok Sui No-Touch Energy System</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Cleansing and Energizing the Body's Aura and Chakras</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Accelerates Natural Healing</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Giving Power to Resist and Survive for People with Major Health Issues</li>
+              <li><i class="fas fa-sparkles gold-text"></i> Replenishes Depleted Vital Life Force</li>
+            </ul>
+          </div>
+          <button class="btn btn-gold-filled" onclick="openBookingModal('Pranic Healing (₹24,999)', 'Spiritual Healing & Spellwork')">
+            BOOK PRANIC HEALING <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- LEARN WITH ME SECTION (Tarot & Manifestation) -->
+  <!-- ============================================ -->
+  <section id="learn-with-me" class="learn-tarot-section">
+    <a id="learn-tarot" style="position: absolute; top: -100px;"></a>
+    <div class="section-container">
+      <span class="section-kicker text-center">DIVINE ACADEMY • 1:1 SACRED MENTORSHIP</span>
+      <h2 class="section-title text-center">LEARN WITH ME:<br><span class="gold-text">BECOME A TAROT READER &amp; MANIFESTATION COACH</span></h2>
+      <p class="section-desc text-center">
+        Step into your intuitive power and learn to co-create your reality. Master the ancient art of Tarot or become a certified Manifestation Coach directly under Ishita Kothari.
+      </p>
+
+      <div class="tarot-courses-stack">
+        
+        <!-- Course 1: Beginner Tarot Reading Course -->
+        <div class="tarot-course-card glass-panel">
+          <div class="course-left-col">
+            <span class="course-card-badge"><i class="fas fa-star gold-text"></i> FOUNDATION LEVEL</span>
+            <h3 class="course-title">BEGINNER TAROT READING COURSE</h3>
+            <span class="course-duration-pill"><i class="far fa-clock"></i> 3 WEEK COURSE</span>
+          </div>
+
+          <div class="course-divider-col"></div>
+
+          <div class="course-mid-col">
+            <ul class="course-curriculum-list">
+              <li><i class="fas fa-check-circle gold-text"></i> Basic knowledge on tarot cards, tarot reading and decks</li>
+              <li><i class="fas fa-check-circle gold-text"></i> How to practice tarot</li>
+              <li><i class="fas fa-check-circle gold-text"></i> How to become a tarot reader</li>
+              <li><i class="fas fa-check-circle gold-text"></i> Modules and study material</li>
+              <li><i class="fas fa-hourglass-half gold-text"></i> 3 week course</li>
+            </ul>
+          </div>
+
+          <div class="course-right-col">
+            <div class="course-price-box">
+              <span class="course-orig-price">₹17,999</span>
+              <span class="course-offer-price">₹11,111</span>
+            </div>
+            <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Beginner Tarot Reading Course (₹11,111)', 'Tarot Mentorship & Course')">
+              ENROLL IN COURSE <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Course 2: Standard / Intermediate Tarot Reading Course -->
+        <div class="tarot-course-card glass-panel featured-course">
+          <div class="course-left-col">
+            <span class="course-card-badge"><i class="fas fa-bolt gold-text"></i> INTERMEDIATE MASTERY</span>
+            <h3 class="course-title">STANDARD / INTERMEDIATE TAROT READING COURSE</h3>
+            <span class="course-duration-pill"><i class="far fa-clock"></i> 8 WEEK COURSE</span>
+          </div>
+
+          <div class="course-divider-col"></div>
+
+          <div class="course-mid-col">
+            <ul class="course-curriculum-list">
+              <li><i class="fas fa-check-circle gold-text"></i> Meditation (connecting mind and soul)</li>
+              <li><i class="fas fa-check-circle gold-text"></i> Connecting energies and intuition</li>
+              <li><i class="fas fa-check-circle gold-text"></i> Knowing about stars and planets</li>
+              <li><i class="fas fa-check-circle gold-text"></i> Zodiacs and traits</li>
+              <li><i class="fas fa-hourglass-half gold-text"></i> 8 week course</li>
+            </ul>
+          </div>
+
+          <div class="course-right-col">
+            <div class="course-price-box">
+              <span class="course-orig-price">₹34,999</span>
+              <span class="course-offer-price">₹23,450</span>
+            </div>
+            <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Standard / Intermediate Tarot Reading Course (₹23,450)', 'Tarot Mentorship & Course')">
+              ENROLL IN COURSE <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Course 3: Premium / Advance Tarot Reading Course -->
+        <div class="tarot-course-card glass-panel">
+          <div class="course-left-col">
+            <span class="course-card-badge"><i class="fas fa-crown gold-text"></i> ADVANCED PROFESSIONAL</span>
+            <h3 class="course-title">PREMIUM / ADVANCE TAROT READING COURSE</h3>
+            <span class="course-duration-pill"><i class="far fa-clock"></i> 12–15 WEEK COURSE</span>
+          </div>
+
+          <div class="course-divider-col"></div>
+
+          <div class="course-mid-col">
+            <ul class="course-curriculum-list">
+              <li><i class="fas fa-check-circle gold-text"></i> Advance meditation</li>
+              <li><i class="fas fa-check-circle gold-text"></i> Guidance and Remedies</li>
+              <li><i class="fas fa-check-circle gold-text"></i> Aura creation</li>
+              <li><i class="fas fa-check-circle gold-text"></i> 1:1 tarot consultation and practice</li>
+              <li><i class="fas fa-hourglass-half gold-text"></i> 12 -15 week course</li>
+            </ul>
+          </div>
+
+          <div class="course-right-col">
+            <div class="course-price-box">
+              <span class="course-orig-price">₹49,999</span>
+              <span class="course-offer-price">₹34,999</span>
+            </div>
+            <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Premium / Advance Tarot Reading Course (₹34,999)', 'Tarot Mentorship & Course')">
+              ENROLL IN COURSE <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Course 4: Master the Art of Manifestation / Become a Manifestation Coach -->
+        <div class="tarot-course-card glass-panel highlight-border">
+          <div class="course-left-col">
+            <span class="course-card-badge"><i class="fas fa-wand-magic-sparkles gold-text"></i> MANIFESTATION COACHING</span>
+            <h3 class="course-title">MASTER THE ART OF MANIFESTATION / BECOME A MANIFESTATION COACH</h3>
+            <span class="course-duration-pill"><i class="fas fa-sparkles"></i> MANIFESTATION &amp; COACHING</span>
+          </div>
+
+          <div class="course-divider-col"></div>
+
+          <div class="course-mid-col">
+            <ul class="course-curriculum-list">
+              <li><i class="fas fa-check-circle gold-text"></i> <strong>Attract Your Desires &amp; Dream Life:</strong> This course provides and teaches different manifestation techniques to attract your desires and dream life.</li>
+              <li><i class="fas fa-check-circle gold-text"></i> <strong>Create Your Own Techniques:</strong> You will also learn how to create new manifestation techniques that could work for you to build your dream life.</li>
+              <li><i class="fas fa-check-circle gold-text"></i> <strong>Subconscious Reprogramming:</strong> Dissolving deep-seated scarcity blocks, energetic lack, and raising your vibrational setpoint.</li>
+              <li><i class="fas fa-check-circle gold-text"></i> <strong>Become a Certified Coach:</strong> Step-by-step guidance on coaching others, structuring 1:1 client sessions, and practical holding space.</li>
+              <li><i class="fas fa-hourglass-half gold-text"></i> <strong>Live 1:1 Mentorship</strong> with personalized energetic exercises &amp; custom manifestation frameworks.</li>
+            </ul>
+          </div>
+
+          <div class="course-right-col">
+            <div class="course-price-box">
+              <span class="course-orig-price">₹29,999</span>
+              <span class="course-offer-price">₹14,999</span>
+            </div>
+            <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Master the Art of Manifestation / Coach (₹14,999)', 'Manifestation Mentorship & Course')">
+              ENROLL IN COURSE <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="academy-cta-wrap">
+        <p>Seeking comprehensive curriculum details, 1:1 live schedule formats, and certification outlines?</p>
+        <a href="learn-with-me.html" class="btn btn-outline">
+          <i class="fas fa-graduation-cap gold-text"></i> VISIT DEDICATED LEARN WITH ME PAGE <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -811,6 +1228,9 @@
     <div class="section-container">
       <span class="section-kicker text-center">WHY CLIENTS TRUST THIS SPACE</span>
       <h2 class="section-title text-center">A SANCTUARY OF <span class="gold-text">AUTHENTIC ALIGNMENT</span></h2>
+      <p class="section-desc text-center">
+        Every reading and healing session is conducted within a sacred, non-judgmental container built on integrity and real-time energetic resonance.
+      </p>
       
       <div class="why-grid">
         <div class="why-item glass-panel">
@@ -845,6 +1265,9 @@
     <div class="section-container">
       <span class="section-kicker text-center">TESTIMONIALS</span>
       <h2 class="section-title text-center">TRANSFORMED LIVES. <span class="gold-text">INSPIRED SOULS.</span></h2>
+      <p class="section-desc text-center">
+        Words of transformation and heartfelt experiences from clients worldwide who discovered direction, peace, and spiritual rebirth.
+      </p>
       
       <!-- Slider Carousel Container -->
       <div class="testimonials-carousel-wrapper">
@@ -915,7 +1338,7 @@
         <span class="section-kicker">SACRED ENERGIES &amp; VEDIC GEMS</span>
         <h2 class="section-title">PRECIOUS, SEMI-PRECIOUS &amp; <span class="gold-text">HEALING STONES</span></h2>
         <div class="title-divider"><span class="gem-symbol">✦</span></div>
-        <p class="section-subtitle">
+        <p class="section-desc">
           100% natural, certified, and spiritually consecrated by Ishita Kothari. Channel cosmic planetary vibrations, balance chakras, and manifest divine abundance with genuine energized gemstones.
         </p>
       </div>
@@ -1117,6 +1540,9 @@
     <div class="section-container">
       <span class="section-kicker text-center">RESOLVING DOUBTS</span>
       <h2 class="section-title text-center">FREQUENTLY ASKED <span class="gold-text">QUESTIONS</span></h2>
+      <p class="section-desc text-center">
+        Everything you need to know about readings, consultations, energy prerequisites, and sacred confidentiality.
+      </p>
       
       <div class="faq-accordion">
         
@@ -1239,6 +1665,7 @@
             <li><a href="#about">About Ishita</a></li>
             <li><a href="#services">Tarot Readings</a></li>
             <li><a href="#healing">Energy Healing</a></li>
+            <li><a href="learn-with-me.html">Learn With Me Academy</a></li>
             <li><a href="#healing-stones">Gemstones</a></li>
           </ul>
         </div>

@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
         y: (Math.random() - 0.5) * pHeight * 1.8,
         z: Math.random() * 1000,
         radius: Math.random() * 2.2 + 0.6,
-        color: Math.random() > 0.45 ? '#00f0ff' : (Math.random() > 0.4 ? '#ffd97d' : (Math.random() > 0.5 ? '#a855f7' : '#ffffff'))
+        color: Math.random() > 0.45 ? '#00f0ff' : (Math.random() > 0.4 ? '#ffd97d' : (Math.random() > 0.5 ? '#0090ff' : '#ffffff'))
       });
     }
     
@@ -818,6 +818,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  window.closeMobileNav = function() {
+    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+    if (navMenu) navMenu.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  };
+
 
   // ==========================================
   // 4. ScrollSpy: Update active nav states
@@ -894,6 +900,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const chkBtn = document.getElementById('tab-btn-chakra');
     const chkContainer = document.getElementById('chakra-diagnostic-container');
     const gridContainer = document.getElementById('healing-grid-container');
+    const protocolBanner = document.getElementById('healing-protocol-banner');
+    const introNote = document.getElementById('healing-intro-note');
 
     if (!modBtn || !chkBtn || !chkContainer || !gridContainer) return;
 
@@ -902,11 +910,15 @@ document.addEventListener('DOMContentLoaded', () => {
       chkBtn.classList.remove('active');
       chkContainer.style.display = 'none';
       gridContainer.style.display = 'grid';
+      if (protocolBanner) protocolBanner.style.display = 'block';
+      if (introNote) introNote.style.display = 'block';
     } else {
       chkBtn.classList.add('active');
       modBtn.classList.remove('active');
       chkContainer.style.display = 'block';
       gridContainer.style.display = 'none';
+      if (protocolBanner) protocolBanner.style.display = 'none';
+      if (introNote) introNote.style.display = 'none';
     }
   };
 

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Learn With Me — Tarot &amp; Manifestation Courses | Divine Oracle Tarot by Ishita Kothari</title>
+  <meta name="description" content="Learn With Me: Become a certified Tarot Reader or Master the Art of Manifestation & Become a Manifestation Coach under Ishita Kothari. 1:1 live mentorship, custom techniques, and certification.">
+  <meta name="keywords" content="Learn With Me, Learn Tarot, Become a Tarot Reader, Master the Art of Manifestation, Become a Manifestation Coach, Ishita Kothari, Divine Oracle Tarot, Jaipur">
+  <meta name="author" content="Ishita Kothari">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Learn With Me — Tarot &amp; Manifestation Courses | Divine Oracle">
+  <meta property="og:description" content="Step into your intuitive power and learn Tarot & Manifestation from Ishita Kothari. Beginner to Advanced courses with 1:1 live guidance.">
+  <meta property="og:image" content="images/ishita_portrait.png">
+
+  <!-- Favicon Links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Premium Google Fonts: Cinzel Decorative, Cinzel, Cormorant Garamond, Plus Jakarta Sans, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Core Design Styles -->
+  <link rel="stylesheet" href="styles.css?v=3.2">
+</head>
+<body class="page-learn-with-me">
+
+  <!-- Background Cosmic Starfield & Stardust Canvas -->
+  <canvas id="stars-canvas"></canvas>
+  <canvas id="stardust-canvas"></canvas>
+
+  <!-- ═════════ SITE WRAPPER ═════════ -->
+  <div class="site" id="site">
+    <!-- Floating Navigation Bar -->
+    <header id="header" class="site-header">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html#home">
+            <span class="logo-title">DIVINE ORACLE TAROT</span>
+            <span class="logo-subtitle">BY ISHITA KOTHARI</span>
+          </a>
+        </div>
+        
+        <!-- Hamburger Menu for Mobile -->
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+
+        <nav id="primary-navigation" class="nav-menu">
+          <ul>
+            <li><a href="index.html#home" class="nav-link">HOME</a></li>
+            <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
+            <li><a href="index.html#services" class="nav-link">SERVICES</a></li>
+            <li><a href="index.html#healing" class="nav-link">HEALING</a></li>
+            <li><a href="learn-with-me.html" class="nav-link active">LEARN WITH ME</a></li>
+            <li><a href="index.html#healing-stones" class="nav-link">GEMSTONES</a></li>
+            <li><a href="index.html#why-choose" class="nav-link">WHY ME</a></li>
+            <li><a href="index.html#testimonials" class="nav-link">REVIEWS</a></li>
+            <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+          </ul>
+          <div class="mobile-drawer-cta">
+            <button class="btn btn-gold-filled" onclick="openBookingModal('Mentorship Course Inquiry', 'Course Enrollment'); closeMobileNav();">ENROLL NOW <i class="fab fa-whatsapp"></i></button>
+          </div>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn btn-gold btn-nav" onclick="openBookingModal('Mentorship Course Inquiry', 'Course Enrollment')">ENROLL NOW <i class="fab fa-whatsapp"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Academy Hero Section -->
+    <section class="academy-hero-section">
+      <div class="academy-hero-container">
+        <span class="section-kicker">✦ SACRED MENTORSHIP ACADEMY • 1:1 LIVE GUIDANCE ✦</span>
+        <h1 class="hero-title">LEARN WITH ME<br><span class="gold-text">BECOME A TAROT READER &amp; MANIFESTATION COACH</span></h1>
+        
+        <p class="hero-desc" style="max-width: 840px; margin: 1.5rem auto 2.5rem;">
+          Step into your intuitive power and learn to co-create your reality. Master the ancient art of Tarot reading or awaken the alchemy of Conscious Manifestation directly under Ishita Kothari. Personalized 1:1 training designed to awaken your inner oracle and build a purpose-driven spiritual career.
+        </p>
+
+        <div class="hero-ctas" style="justify-content: center;">
+          <a href="#courses" class="btn btn-gold-filled">
+            EXPLORE ALL COURSES &amp; PRICING <i class="fas fa-arrow-down"></i>
+          </a>
+          <button class="btn btn-outline" onclick="openBookingModal('Course Consultation with Ishita', 'Mentorship Consultation')">
+            TALK TO ISHITA <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+
+        <!-- Academy Highlights Strip -->
+        <div class="academy-highlights-grid">
+          <div class="academy-highlight-card glass-panel">
+            <div class="academy-highlight-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h4>Personalized 1:1 Mentorship</h4>
+            <p>Direct live training sessions tailored to your pace, energy blueprint, and spiritual gifts.</p>
+          </div>
+
+          <div class="academy-highlight-card glass-panel">
+            <div class="academy-highlight-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+            <h4>Manifestation &amp; Tarot</h4>
+            <p>Master card readings, aura creation, and learn how to build custom manifestation techniques for dream life creation.</p>
+          </div>
+
+          <div class="academy-highlight-card glass-panel">
+            <div class="academy-highlight-icon"><i class="fas fa-book-open-reader"></i></div>
+            <h4>Modules &amp; Study Material</h4>
+            <p>Comprehensive structured guides, archetype cheat-sheets, workbook rituals, and spread manuals.</p>
+          </div>
+
+          <div class="academy-highlight-card glass-panel">
+            <div class="academy-highlight-icon"><i class="fas fa-certificate"></i></div>
+            <h4>Practitioner Certification</h4>
+            <p>Real client simulation, ethical practice guidelines, and recognized practitioner certification.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Courses Section -->
+    <section id="courses" class="learn-tarot-section">
+      <div class="section-container">
+        <span class="section-kicker text-center">STRUCTURED MENTORSHIP TIERS</span>
+        <h2 class="section-title text-center">CHOOSE YOUR LEARNING PATH<br><span class="gold-text">TAROT &amp; MANIFESTATION PROGRAMS</span></h2>
+        <p class="section-desc text-center">
+          All courses include live 1:1 instruction with Ishita Kothari, personalized feedback, comprehensive study materials, and practical client reading/coaching practice.
+        </p>
+
+        <div class="tarot-courses-stack">
+          
+          <!-- Course 1: Beginner Tarot Reading Course -->
+          <div class="tarot-course-card glass-panel">
+            <div class="course-left-col">
+              <span class="course-card-badge"><i class="fas fa-star gold-text"></i> FOUNDATION TAROT</span>
+              <h3 class="course-title">BEGINNER TAROT READING COURSE</h3>
+              <span class="course-duration-pill"><i class="far fa-clock"></i> 3 WEEK COURSE</span>
+            </div>
+
+            <div class="course-divider-col"></div>
+
+            <div class="course-mid-col">
+              <ul class="course-curriculum-list">
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Basic knowledge on tarot cards, tarot reading and decks:</strong> Learn the structure of the 78 Rider-Waite cards, Major &amp; Minor Arcana, and suit elemental dynamics.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>How to practice tarot:</strong> Daily drawing rituals, shuffling mechanics, cleansing decks, and interpreting core card spreads.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>How to become a tarot reader:</strong> Building personal connection with your cards, tuning into card symbolism, and delivering basic intuitive readings.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Modules and study material:</strong> Full digital course handbook, spread templates, card keyword summaries, and dedicated worksheets.</li>
+                <li><i class="fas fa-hourglass-half gold-text"></i> <strong>3 week course:</strong> Structured foundational learning with live Q&amp;A and guided homework.</li>
+              </ul>
+            </div>
+
+            <div class="course-right-col">
+              <div class="course-price-box">
+                <span class="course-orig-price">₹17,999</span>
+                <span class="course-offer-price">₹11,111</span>
+              </div>
+              <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Beginner Tarot Reading Course (₹11,111)', 'Tarot Mentorship & Course')">
+                ENROLL NOW <i class="fab fa-whatsapp"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Course 2: Master the Art of Manifestation / Become a Manifestation Coach -->
+          <div class="tarot-course-card glass-panel highlight-border">
+            <div class="course-left-col">
+              <span class="course-card-badge"><i class="fas fa-wand-magic-sparkles gold-text"></i> COACH CERTIFICATION</span>
+              <h3 class="course-title">MASTER THE ART OF MANIFESTATION / BECOME A MANIFESTATION COACH</h3>
+              <span class="course-duration-pill"><i class="fas fa-sparkles"></i> MANIFESTATION &amp; COACHING</span>
+            </div>
+
+            <div class="course-divider-col"></div>
+
+            <div class="course-mid-col">
+              <ul class="course-curriculum-list">
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Attract Your Desires &amp; Dream Life:</strong> This course provides and teaches different manifestation techniques to attract your desires and dream life.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Create Your Own Techniques:</strong> You will also learn how to create new manifestation techniques that could work for you to build your dream life.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Subconscious Reprogramming:</strong> Dissolving deep-seated scarcity blocks, energetic lack, and raising your vibrational setpoint.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Become a Certified Coach:</strong> Step-by-step guidance on coaching others, structuring 1:1 client sessions, and practical holding space.</li>
+                <li><i class="fas fa-hourglass-half gold-text"></i> <strong>Live 1:1 Mentorship</strong> with personalized energetic exercises &amp; custom manifestation frameworks.</li>
+              </ul>
+            </div>
+
+            <div class="course-right-col">
+              <div class="course-price-box">
+                <span class="course-orig-price">₹29,999</span>
+                <span class="course-offer-price">₹14,999</span>
+              </div>
+              <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Master the Art of Manifestation / Coach (₹14,999)', 'Manifestation Mentorship & Course')">
+                ENROLL NOW <i class="fab fa-whatsapp"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Course 3: Standard / Intermediate Tarot Reading Course -->
+          <div class="tarot-course-card glass-panel featured-course">
+            <div class="course-left-col">
+              <span class="course-card-badge"><i class="fas fa-bolt gold-text"></i> INTERMEDIATE MASTERY</span>
+              <h3 class="course-title">STANDARD / INTERMEDIATE TAROT READING COURSE</h3>
+              <span class="course-duration-pill"><i class="far fa-clock"></i> 8 WEEK COURSE</span>
+            </div>
+
+            <div class="course-divider-col"></div>
+
+            <div class="course-mid-col">
+              <ul class="course-curriculum-list">
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Meditation (connecting mind and soul):</strong> Grounding meditations to dissolve mental chatter and open the third-eye intuitive channel before readings.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Connecting energies and intuition:</strong> Reading without memorizing books; feeling energetic vibrations, timing markers, and hidden card undertones.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Knowing about stars and planets:</strong> Astrological associations of tarot cards, planetary rulers, and cosmic alignments influencing your readings.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Zodiacs and traits:</strong> Sun, Moon, and Rising sign traits, personality archetypes, and relationship compatibility spreads.</li>
+                <li><i class="fas fa-hourglass-half gold-text"></i> <strong>8 week course:</strong> Comprehensive course duration with real-client scenario practice.</li>
+              </ul>
+            </div>
+
+            <div class="course-right-col">
+              <div class="course-price-box">
+                <span class="course-orig-price">₹34,999</span>
+                <span class="course-offer-price">₹23,450</span>
+              </div>
+              <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Standard / Intermediate Tarot Reading Course (₹23,450)', 'Tarot Mentorship & Course')">
+                ENROLL NOW <i class="fab fa-whatsapp"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Course 4: Premium / Advance Tarot Reading Course -->
+          <div class="tarot-course-card glass-panel">
+            <div class="course-left-col">
+              <span class="course-card-badge"><i class="fas fa-crown gold-text"></i> MASTER PRACTITIONER</span>
+              <h3 class="course-title">PREMIUM / ADVANCE TAROT READING COURSE</h3>
+              <span class="course-duration-pill"><i class="far fa-clock"></i> 12–15 WEEK COURSE</span>
+            </div>
+
+            <div class="course-divider-col"></div>
+
+            <div class="course-mid-col">
+              <ul class="course-curriculum-list">
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Advance meditation:</strong> Deep trance states, psychic shielding against external emotional drain, and high-frequency channeling.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Guidance and Remedies:</strong> Prescribing practical astrological, crystal, switchword, and behavioral remedies to help clients navigate difficult cards.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>Aura creation:</strong> Building an impenetrable auric shield, reading client aura frequencies, and cleansing reading spaces.</li>
+                <li><i class="fas fa-check-circle gold-text"></i> <strong>1:1 tarot consultation and practice:</strong> Extensive live client simulations, complex Celtic Cross &amp; Zodiac spreads, and professional business ethics.</li>
+                <li><i class="fas fa-hourglass-half gold-text"></i> <strong>12 -15 week course:</strong> Master-level practitioner curriculum with ongoing mentorship.</li>
+              </ul>
+            </div>
+
+            <div class="course-right-col">
+              <div class="course-price-box">
+                <span class="course-orig-price">₹49,999</span>
+                <span class="course-offer-price">₹34,999</span>
+              </div>
+              <button class="btn btn-gold-filled course-btn" onclick="openBookingModal('Premium / Advance Tarot Reading Course (₹34,999)', 'Tarot Mentorship & Course')">
+                ENROLL NOW <i class="fab fa-whatsapp"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Learn with Ishita Section -->
+    <section class="why-section">
+      <div class="section-container">
+        <span class="section-kicker text-center">THE DIVINE ORACLE ADVANTAGE</span>
+        <h2 class="section-title text-center">WHY TRAIN WITH <span class="gold-text">ISHITA KOTHARI?</span></h2>
+        
+        <div class="why-grid">
+          <div class="why-item glass-panel">
+            <div class="why-icon"><i class="fas fa-user-graduate"></i></div>
+            <h3>1:1 Direct Attention</h3>
+            <p>No crowded pre-recorded classrooms. You learn directly with Ishita, receiving personalized guidance on your strengths and intuitive blind spots.</p>
+          </div>
+
+          <div class="why-item glass-panel">
+            <div class="why-icon"><i class="fas fa-fire-flame-curved"></i></div>
+            <h3>Intuition &amp; Alignment</h3>
+            <p>Instead of rote memorization, learn to connect deeply with cosmic imagery, colors, subconscious archetypes, and spiritual gut instincts.</p>
+          </div>
+
+          <div class="why-item glass-panel">
+            <div class="why-item-icon why-icon"><i class="fas fa-shield-halved"></i></div>
+            <h3>Energetic Safety &amp; Protection</h3>
+            <p>Learn sacred grounding, cord-cutting, aura creation, and shield building so you never absorb clients' heavy emotions or negative attachments.</p>
+          </div>
+
+          <div class="why-item glass-panel">
+            <div class="why-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Practitioner Certification</h3>
+            <p>Earn a recognized Divine Oracle Certificate of Completion to confidently launch your reading or manifestation coaching practice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course FAQ Section -->
+    <section class="faq-section">
+      <div class="section-container">
+        <span class="section-kicker text-center">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="section-title text-center">LEARN WITH ME: <span class="gold-text">WHAT YOU NEED TO KNOW</span></h2>
+        
+        <div class="faq-accordion">
+          
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>What is the Manifestation Coaching course and who is it for?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              <p>The "Master the Art of Manifestation / Become a Manifestation Coach" course teaches diverse manifestation techniques to attract desires and dream life, and guides you on how to invent new manifestation techniques tailored to yourself and clients. It is ideal for anyone seeking personal transformation or aiming to guide others professionally.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Do I need special psychic gifts or natural intuition to learn?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              <p>Not at all. Intuition and manifestation abilities are natural human faculties that everyone possesses. Our courses teach you step-by-step how to awaken, tune, and trust your inner guidance and command your reality with intention.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>How are the classes scheduled and delivered?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              <p>Classes are held 1:1 online via Google Meet or Zoom. We mutually schedule sessions to match your weekly availability. Practical homework, reading reviews, and guided alignment exercises are provided between sessions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Can I start charging clients after completing the courses?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              <p>Yes! Both the advanced Tarot programs and the Manifestation Coach course specifically prepare you with client consultation frameworks, ethical boundaries, remedies, and practical exercises so you can confidently step into professional practice.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="final-cta-section">
+      <div class="section-container">
+        <div class="cta-banner glass-panel">
+          <div class="cta-graphics-left">
+            <img src="images/mystical_crystals.png" alt="Mystical Crystals" class="cta-crystal-img">
+          </div>
+          
+          <div class="cta-content-center">
+            <span class="cta-kicker">YOUR INTUITIVE &amp; MANIFESTATION DESTINY AWAITS</span>
+            <h2>READY TO LEARN AND <span class="gold-text">BUILD YOUR DREAM LIFE?</span></h2>
+            <p>Connect with Ishita on WhatsApp to discuss your course tier, check session availability, and reserve your mentorship slot.</p>
+            <button class="btn btn-gold-filled btn-large" onclick="openBookingModal('Mentorship Course Inquiry', 'WhatsApp Redirect')">
+              ENROLL IN MENTORSHIP <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+          
+          <div class="cta-graphics-right">
+            <div class="sun-moon-graphic">
+              <i class="fas fa-sun gold-text"></i>
+              <i class="fas fa-moon gold-text"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="section-container">
+        <div class="footer-grid">
+          
+          <!-- Column 1: Brand Info -->
+          <div class="footer-col footer-brand">
+            <span class="footer-logo">DIVINE ORACLE TAROT</span>
+            <span class="footer-tagline">BY ISHITA KOTHARI</span>
+            <p class="footer-about">
+              Empowering souls through the sacred art of divination, healing, manifestation, and occult mentorship.
+            </p>
+            <div class="footer-socials">
+              <a href="https://instagram.com" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/" target="_blank" aria-label="Connect on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="mailto:contact@divineoracletarot.com" aria-label="Email us"><i class="far fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-col">
+            <h4>QUICK LINKS</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#about">About Ishita</a></li>
+              <li><a href="index.html#services">Tarot Readings</a></li>
+              <li><a href="index.html#healing">Energy Healing</a></li>
+              <li><a href="learn-with-me.html">Learn With Me Academy</a></li>
+              <li><a href="index.html#healing-stones">Gemstones</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Useful Links -->
+          <div class="footer-col">
+            <h4>USEFUL INFO</h4>
+            <ul class="footer-links">
+              <li><a href="index.html#testimonials">Testimonials</a></li>
+              <li><a href="index.html#faq">Frequently Asked Questions</a></li>
+              <li><a href="javascript:void(0)" onclick="openBookingModal('General Support', 'General Query')">Contact Support</a></li>
+              <li><a href="javascript:void(0)" onclick="alert('This website uses secure SSL encryption. All student session details are strictly confidential.')">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Connect -->
+          <div class="footer-col">
+            <h4>CONNECT DIRECTLY</h4>
+            <ul class="footer-contact">
+              <li><i class="fab fa-whatsapp gold-text"></i> <span>WhatsApp: +91 99999 88888</span></li>
+              <li><i class="fab fa-instagram gold-text"></i> <span>Instagram: @divineoracletarot</span></li>
+              <li><i class="far fa-envelope gold-text"></i> <span>Email: ishita@divineoracle.com</span></li>
+              <li><i class="fas fa-map-marker-alt gold-text"></i> <span>Location: Jaipur, India</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Divine Oracle Tarot by Ishita Kothari. All Rights Reserved. Designed for Supreme Spiritual Alignment.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- High-Converting Booking/Enrollment Modal -->
+    <div id="booking-modal" class="modal-overlay">
+      <div class="modal-card booking-modal-card glass-panel">
+        <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+        
+        <div class="booking-modal-header">
+          <div class="modal-title-star"><i class="fas fa-circle-notch fa-spin gold-text"></i></div>
+          <h3>Begin Your Enrollment</h3>
+          <p>Input your coordinates below to connect with Ishita on WhatsApp.</p>
+        </div>
+
+        <form id="booking-funnel-form" onsubmit="handleFormSubmission(event)">
+          <div class="form-row-split">
+            <div class="form-group">
+              <label for="modal-service-selected">Selected Course / Service</label>
+              <input type="text" id="modal-service-selected" class="form-input text-gold" readonly>
+            </div>
+            <div class="form-group">
+              <label for="modal-format-selected">Format</label>
+              <input type="text" id="modal-format-selected" class="form-input text-gold" readonly>
+            </div>
+          </div>
+
+          <div class="form-section-title">1. Your Personal Coordinates</div>
+          <div class="form-row-split">
+            <div class="form-group">
+              <label for="client-name">Your Full Name <span class="text-gold">*</span></label>
+              <input type="text" id="client-name" class="form-input" placeholder="e.g. Aditi Sharma" required>
+            </div>
+            <div class="form-group">
+              <label for="client-dob">Date of Birth <span class="text-gold">*</span></label>
+              <input type="date" id="client-dob" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-section-title">2. Your Questions / Course Intentions</div>
+          <div class="form-group">
+            <label for="client-questions">Your Motivation / Questions for Ishita <span class="text-gold">*</span></label>
+            <textarea id="client-questions" class="form-textarea" placeholder="Tell us why you want to learn Tarot or Manifestation, preferred timing, or any questions..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold-filled w-full" style="margin-top: 1.4rem;">
+            CONTINUE ON WHATSAPP <i class="fab fa-whatsapp"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div> <!-- End site -->
+
+  <!-- Interactive Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
