@@ -237,6 +237,34 @@ window.toggleBioModal = function(show) {
   }
 };
 
+// 3b. Open & Close Client Review Screenshot Lightbox
+window.openReviewLightbox = function(imgSrc) {
+  const lightbox = document.getElementById('review-lightbox');
+  const lightboxImg = document.getElementById('review-lightbox-img');
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+};
+
+window.closeReviewLightbox = function(event) {
+  if (event && event.target && event.target.id === 'review-lightbox-img') return;
+  const lightbox = document.getElementById('review-lightbox');
+  if (lightbox) {
+    lightbox.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
+};
+
+window.closeMobileNav = function() {
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.getElementById('primary-navigation');
+  if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+  if (navMenu) navMenu.classList.remove('active');
+  document.body.classList.remove('no-scroll');
+};
+
 // 4. Filter Services Tabs
 window.filterServices = function(category) {
   const tabButtons = document.querySelectorAll('.services-tabs .tab-btn');
@@ -621,7 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sanctuary = document.getElementById('hero-3d-sanctuary');
   const spatialStage = document.querySelector('.spatial-3d-stage');
   const spatialCards = document.querySelectorAll('.spatial-card');
-  const mandalaChamber = document.querySelector('.3d-mandala-chamber');
+  const mandalaChamber = document.querySelector('.spatial-mandala-chamber');
 
   if (sanctuary && spatialStage && spatialCards.length > 0) {
     let mouseX = 0;
@@ -901,6 +929,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chkContainer = document.getElementById('chakra-diagnostic-container');
     const gridContainer = document.getElementById('healing-grid-container');
     const protocolBanner = document.getElementById('healing-protocol-banner');
+    const ritualGallery = document.getElementById('healing-ritual-gallery');
     const introNote = document.getElementById('healing-intro-note');
 
     if (!modBtn || !chkBtn || !chkContainer || !gridContainer) return;
@@ -911,6 +940,7 @@ document.addEventListener('DOMContentLoaded', () => {
       chkContainer.style.display = 'none';
       gridContainer.style.display = 'grid';
       if (protocolBanner) protocolBanner.style.display = 'block';
+      if (ritualGallery) ritualGallery.style.display = 'block';
       if (introNote) introNote.style.display = 'block';
     } else {
       chkBtn.classList.add('active');
@@ -918,6 +948,7 @@ document.addEventListener('DOMContentLoaded', () => {
       chkContainer.style.display = 'block';
       gridContainer.style.display = 'none';
       if (protocolBanner) protocolBanner.style.display = 'none';
+      if (ritualGallery) ritualGallery.style.display = 'none';
       if (introNote) introNote.style.display = 'none';
     }
   };
@@ -946,24 +977,43 @@ document.addEventListener('DOMContentLoaded', () => {
     dots[currentSlide].classList.add('active');
   }
   
-  // Button Event Listeners
-  if (prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', () => {
-      updateCarousel(currentSlide - 1);
-      resetAutoSlide();
-    });
-    
-    nextBtn.addEventListener('click', () => {
-      updateCarousel(currentSlide + 1);
-      resetAutoSlide();
-    });
-  }
-  
-  // Jump to specific slide using dots indicator
+  // Jump to specific slide using dots indicator or prev/next buttons
   window.jumpToSlide = function(index) {
     updateCarousel(index);
     resetAutoSlide();
   };
+
+  window.prevTestimonial = function() {
+    updateCarousel(currentSlide - 1);
+    resetAutoSlide();
+  };
+
+  window.nextTestimonial = function() {
+    updateCarousel(currentSlide + 1);
+    resetAutoSlide();
+  };
+
+  // Touch-swipe support for mobile phones on the testimonials slider
+  const sliderEl = document.querySelector('.testimonials-slider');
+  if (sliderEl) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    sliderEl.addEventListener('touchstart', (e) => {
+      if (e.changedTouches && e.changedTouches.length > 0) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+    sliderEl.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches.length > 0) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 45) {
+          if (diff > 0) window.nextTestimonial();
+          else window.prevTestimonial();
+        }
+      }
+    }, { passive: true });
+  }
   
   // Auto rotation loop
   function startAutoSlide() {
@@ -1010,113 +1060,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // 8. Meet Your Guide Biography Modal
+  // 8. Modals Outside Click & Escape Key Support
   // ==========================================
   const bioModal = document.getElementById('bio-modal');
-  
-  window.toggleBioModal = function(show) {
-    if (show) {
-      bioModal.classList.add('active');
-      document.body.classList.add('no-scroll');
-    } else {
-      bioModal.classList.remove('active');
-      document.body.classList.remove('no-scroll');
-    }
-  };
+  const bookingModal = document.getElementById('booking-modal');
+  const reviewLightbox = document.getElementById('review-lightbox');
   
   // Click outside to close modals
   window.addEventListener('click', (e) => {
-    if (e.target === bioModal) {
-      toggleBioModal(false);
+    if (bioModal && e.target === bioModal) {
+      window.toggleBioModal(false);
     }
-    if (e.target === bookingModal) {
-      closeBookingModal();
+    if (bookingModal && e.target === bookingModal) {
+      window.closeBookingModal();
+    }
+    if (reviewLightbox && e.target === reviewLightbox) {
+      window.closeReviewLightbox();
     }
   });
 
-
-  // ==========================================
-  // 9. Booking Funnel & WhatsApp Redirect
-  // ==========================================
-  const bookingModal = document.getElementById('booking-modal');
-  const bookingForm = document.getElementById('booking-funnel-form');
-  const serviceInput = document.getElementById('modal-service-selected');
-  const formatInput = document.getElementById('modal-format-selected');
-  
-  // Open Booking trigger
-  window.openBookingModal = function(serviceName, formatName) {
-    if (serviceInput && formatInput && bookingModal) {
-      serviceInput.value = serviceName;
-      formatInput.value = formatName;
-      
-      bookingModal.classList.add('active');
-      document.body.classList.add('no-scroll');
+  // Escape key to close any open modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (bioModal && bioModal.classList.contains('active')) window.toggleBioModal(false);
+      if (bookingModal && bookingModal.classList.contains('active')) window.closeBookingModal();
+      if (reviewLightbox && reviewLightbox.classList.contains('active')) window.closeReviewLightbox();
     }
-  };
-  
-  // Close Booking trigger
-  window.closeBookingModal = function() {
-    if (bookingModal) {
-      bookingModal.classList.remove('active');
-      document.body.classList.remove('no-scroll');
-      if (bookingForm) bookingForm.reset();
-    }
-  };
-  
-  // Process Booking and compile message redirecting to WhatsApp
-  window.handleFormSubmission = function(event) {
-    event.preventDefault();
-    
-    // Form Inputs
-    const service = serviceInput.value;
-    const format = formatInput.value;
-    const name = document.getElementById('client-name').value;
-    const dob = document.getElementById('client-dob').value;
-    const tob = document.getElementById('client-tob').value || 'Not provided';
-    const birthplace = document.getElementById('client-pob').value || 'Not provided';
-    const partner = document.getElementById('partner-details').value || 'None';
-    const questions = document.getElementById('client-questions').value;
-    
-    // Format Date of Birth cleanly
-    let formattedDob = dob;
-    try {
-      const dateParts = dob.split('-');
-      if (dateParts.length === 3) {
-        const dateObj = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
-        formattedDob = dateObj.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-      }
-    } catch(err) {
-      formattedDob = dob;
-    }
-    
-    // Build Structured message for Ishita's WhatsApp
-    const whatsappNumber = '919999988888'; // Replace with Ishita Kothari's actual WhatsApp business number
-    
-    const message = `🔮 *NEW SACRED BOOKING REQUEST* 🔮
+  });
 
-👤 *Client Name:* ${name}
-📅 *Date of Birth:* ${formattedDob}
-⏰ *Birth Time:* ${tob}
-📍 *Birthplace:* ${birthplace}
+  // Pause other review/intro videos when one starts playing
+  const reviewVideos = document.querySelectorAll('.client-review-video-player, .about-intro-video');
+  reviewVideos.forEach(video => {
+    video.addEventListener('play', () => {
+      reviewVideos.forEach(other => {
+        if (other !== video && !other.paused) {
+          other.pause();
+        }
+      });
+    });
+  });
 
-📖 *Selected Service:* ${service}
-🎭 *Reading Format:* ${format}
+  // Autoplay & Pause Videos on Scroll (About Us Intro Video & Ritual Videos)
+  const scrollVideos = document.querySelectorAll('.about-intro-video, .healing-ritual-video');
+  if ('IntersectionObserver' in window && scrollVideos.length > 0) {
+    const videoScrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // Browser blocked unmuted autoplay prior to user gesture; play muted and unmute on next interaction
+              video.muted = true;
+              video.play().catch(() => {});
+              const unlockAudio = () => {
+                if (video.classList.contains('about-intro-video') && !video.paused) {
+                  video.muted = false;
+                }
+                document.removeEventListener('click', unlockAudio);
+                document.removeEventListener('touchstart', unlockAudio);
+              };
+              document.addEventListener('click', unlockAudio, { once: true });
+              document.addEventListener('touchstart', unlockAudio, { once: true });
+            });
+          }
+        } else {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      });
+    }, { threshold: 0.35 });
 
-👥 *Relational Connection details:* ${partner}
-
-❓ *Subconscious blockages / Questions:*
-"${questions}"
-
-✨ _Please confirm my booking slot and share payment coordinates._ ✨`;
-
-    // Encode string and redirect
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
-    // Open in new tab and close booking modal
-    window.open(whatsappUrl, '_blank');
-    closeBookingModal();
-  };
+    scrollVideos.forEach(video => videoScrollObserver.observe(video));
+  }
 
 });
 

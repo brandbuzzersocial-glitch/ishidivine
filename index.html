@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css?v=3.2">
+  <link rel="stylesheet" href="styles.css?v=4.4">
 
   <!-- Three.js for 3D Intro Animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -103,12 +103,12 @@
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
         <div class="mobile-drawer-cta">
-          <a href="#services" class="btn btn-gold-filled" onclick="openBookingModal('General consultation', 'Video Call'); closeMobileNav();">BOOK A READING <i class="fab fa-whatsapp"></i></a>
+          <a href="javascript:void(0)" class="btn btn-gold-filled" onclick="openBookingModal('General consultation', 'Video Call'); closeMobileNav();">BOOK A READING <i class="fab fa-whatsapp"></i></a>
         </div>
       </nav>
 
       <div class="nav-actions">
-        <a href="#services" class="btn btn-gold btn-nav" onclick="openBookingModal('General consultation', 'Video Call')">BOOK A READING <i class="fab fa-whatsapp"></i></a>
+        <a href="javascript:void(0)" class="btn btn-gold btn-nav" onclick="openBookingModal('General consultation', 'Video Call')">BOOK A READING <i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </header>
@@ -233,11 +233,13 @@
     <div class="section-container">
       <div class="about-grid">
         
-        <!-- Image Container with glowing mandala effect (Left) -->
+        <!-- Video Container with glowing mandala effect (Left) -->
         <div class="about-visual">
           <div class="about-image-wrapper">
             <div class="about-mandala-bg"></div>
-            <img src="images/ishita_portrait.png" alt="Ishita Kothari - Tarot Reader & Healer" class="about-img">
+            <video class="about-img about-intro-video" src="images/about_ishita_video.mp4" poster="images/about_video_poster.jpg" autoplay loop playsinline controls preload="metadata">
+              Your browser does not support HTML5 video.
+            </video>
           </div>
         </div>
         
@@ -783,6 +785,75 @@
         </div>
       </div>
 
+      <!-- Sacred Altar & Live Rituals Media Showcase (3 Videos + 2 Photos) -->
+      <div class="healing-ritual-gallery-wrap" id="healing-ritual-gallery">
+        <div class="healing-ritual-gallery-header text-center">
+          <span class="protocol-badge"><i class="fas fa-fire-flame-curved gold-text"></i> GLIMPSE INSIDE THE SACRED ALTAR</span>
+          <h3 class="healing-gallery-title">REAL RITUALS, CANDLE SPELLS &amp; <span class="gold-text">PLANETARY WORKINGS</span></h3>
+          <p class="healing-gallery-sub">Authentic glimpses of sacred candle magic, sound &amp; smoke purification, and 12-house zodiac planetary alignments performed by Ishita Kothari.</p>
+        </div>
+
+        <div class="reviews-screenshots-grid healing-media-grid">
+          <!-- Ritual Video 1: Love & Union Candle Ritual -->
+          <div class="review-screenshot-card review-video-card glass-panel">
+            <div class="screenshot-img-wrap video-player-wrap healing-media-frame">
+              <video class="healing-ritual-video" src="images/healing_ritual_video_1.mp4" poster="images/healing_ritual_video_1_poster.jpg" autoplay loop muted playsinline controls preload="metadata">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="screenshot-caption">
+              <p>Sacred Couple Candle &amp; Moon-Phase Crystal Grid for Soul Union &amp; Heart Alignment</p>
+            </div>
+          </div>
+
+          <!-- Ritual Photo 1: Two of Cups & The Lovers Altar -->
+          <div class="review-screenshot-card glass-panel" onclick="openReviewLightbox('images/healing_ritual_img_1.jpg')">
+            <div class="screenshot-img-wrap healing-media-frame">
+              <img src="images/healing_ritual_img_1.jpg" alt="Sacred Love Spell Altar with Two of Cups and The Lovers Tarot" loading="lazy">
+              <div class="screenshot-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> Enlarge</div>
+            </div>
+            <div class="screenshot-caption">
+              <p>Two of Cups &amp; The Lovers Tarot Altar with Rose Quartz, Crystals &amp; Nazar Shielding</p>
+            </div>
+          </div>
+
+          <!-- Ritual Video 2: Aura Cleansing, Singing Bowl & Incense -->
+          <div class="review-screenshot-card review-video-card glass-panel">
+            <div class="screenshot-img-wrap video-player-wrap healing-media-frame">
+              <video class="healing-ritual-video" src="images/healing_ritual_video_2.mp4" poster="images/healing_ritual_video_2_poster.jpg" autoplay loop muted playsinline controls preload="metadata">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="screenshot-caption">
+              <p>Tibetan Singing Bowl, Sacred Smoke &amp; Crystal Tree Detoxification Working</p>
+            </div>
+          </div>
+
+          <!-- Ritual Video 3: 12-Zodiac Planetary Wheel Ritual -->
+          <div class="review-screenshot-card review-video-card glass-panel">
+            <div class="screenshot-img-wrap video-player-wrap healing-media-frame">
+              <video class="healing-ritual-video" src="images/healing_ritual_video_3.mp4" poster="images/healing_ritual_video_3_poster.jpg" autoplay loop muted playsinline controls preload="metadata">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="screenshot-caption">
+              <p>12-House Astrological Zodiac Candle Circle &amp; Orgonite Pyramid Activation</p>
+            </div>
+          </div>
+
+          <!-- Ritual Photo 2: Planetary Alignment Wheel -->
+          <div class="review-screenshot-card glass-panel" onclick="openReviewLightbox('images/healing_ritual_img_2.jpg')">
+            <div class="screenshot-img-wrap healing-media-frame">
+              <img src="images/healing_ritual_img_2.jpg" alt="12 Zodiac Planetary Candle Ritual Wheel" loading="lazy">
+              <div class="screenshot-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> Enlarge</div>
+            </div>
+            <div class="screenshot-caption">
+              <p>Sacred Geometry Zodiac Wheel Illuminated for Vedic Graha &amp; Dasha Balance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Core Healings & Spells Showcase Grid -->
       <p class="healing-intro-note" id="healing-intro-note">
         <i class="fas fa-sparkles gold-text"></i> Some main healings &amp; spells with current special prices are showcased below:
@@ -1263,61 +1334,159 @@
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials-section">
     <div class="section-container">
-      <span class="section-kicker text-center">TESTIMONIALS</span>
+      <span class="section-kicker text-center">CLIENT LOVE &amp; REAL RESULTS</span>
       <h2 class="section-title text-center">TRANSFORMED LIVES. <span class="gold-text">INSPIRED SOULS.</span></h2>
       <p class="section-desc text-center">
-        Words of transformation and heartfelt experiences from clients worldwide who discovered direction, peace, and spiritual rebirth.
+        Real, unfiltered words of transformation and heartfelt experiences shared by clients after their sessions—kept 100% anonymous to honor sacred client privacy.
       </p>
-      
+
+      <!-- All 5 Client Video & Chat Reviews in One Horizontal Line -->
+      <div class="reviews-screenshots-grid">
+        <!-- Video Review 1: Relationship Transformation Voice Note -->
+        <div class="review-screenshot-card review-video-card glass-panel">
+          <div class="screenshot-img-wrap video-player-wrap">
+            <video class="client-review-video-player" src="images/review_video.mp4" poster="images/review_video_poster.png" controls playsinline preload="metadata">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="screenshot-caption">
+            <p>"He talks about future, marriage, kids... today he's chasing &amp; came to my society gate at 2 AM just to take me for fries!"</p>
+            <span class="screenshot-client-tag">— Verified Client</span>
+          </div>
+        </div>
+
+        <!-- Video Review 2: Clarity & Emotional Freedom Voice Note -->
+        <div class="review-screenshot-card review-video-card glass-panel">
+          <div class="screenshot-img-wrap video-player-wrap">
+            <video class="client-review-video-player" src="images/review_video_2.mp4" poster="images/review_video_2_poster.png" controls playsinline preload="metadata">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="screenshot-caption">
+            <p>"I'm feeling so good after sorting out things, and I took an exit today from a very crucial thing eating me like a termite!"</p>
+            <span class="screenshot-client-tag">— Verified Client</span>
+          </div>
+        </div>
+
+        <!-- Chat Screenshot 1 -->
+        <div class="review-screenshot-card glass-panel" onclick="openReviewLightbox('images/review_chat_1.png')">
+          <div class="screenshot-img-wrap">
+            <img src="images/review_chat_1.png" alt="Anonymous Client Review - Marriage Proposal" loading="lazy">
+            <div class="screenshot-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> Enlarge</div>
+          </div>
+          <div class="screenshot-caption">
+            <p>"You told me he's mine &amp; we'll marry each other. Your guidance led me to this—You're Magical!"</p>
+            <span class="screenshot-client-tag">— Verified Client</span>
+          </div>
+        </div>
+
+        <!-- Chat Screenshot 2 -->
+        <div class="review-screenshot-card glass-panel" onclick="openReviewLightbox('images/review_chat_2.png')">
+          <div class="screenshot-img-wrap">
+            <img src="images/review_chat_2.png" alt="Anonymous Client Review - Message in 24 Hours After 3 Months" loading="lazy">
+            <div class="screenshot-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> Enlarge</div>
+          </div>
+          <div class="screenshot-caption">
+            <p>"In 24 hours how can I get the message from someone who did not message me for 3 months... shocking &amp; magical!"</p>
+            <span class="screenshot-client-tag">— Verified Client</span>
+          </div>
+        </div>
+
+        <!-- Chat Screenshot 3 -->
+        <div class="review-screenshot-card glass-panel" onclick="openReviewLightbox('images/review_chat_3.png')">
+          <div class="screenshot-img-wrap">
+            <img src="images/review_chat_3.png" alt="Anonymous Client Review - Chasing Started Sooner Than Expected" loading="lazy">
+            <div class="screenshot-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> Enlarge</div>
+          </div>
+          <div class="screenshot-caption">
+            <p>"Chasing chalu! Kal morning 7:30 se messages aa rahe hain. You are too good—sooner than expected!"</p>
+            <span class="screenshot-client-tag">— Verified Client</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Slider Carousel Container -->
       <div class="testimonials-carousel-wrapper">
-        <button class="carousel-control prev" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-control prev" type="button" onclick="prevTestimonial()" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
         
         <div class="testimonials-slider">
-          <!-- Slide 1 -->
+          <!-- Slide 1: Voice Note Review 1 (Transcribed from Client Audio Feedback) -->
           <div class="testimonial-slide active">
+            <div class="review-type-pill"><i class="fas fa-microphone-lines gold-text"></i> VOICE NOTE FEEDBACK • RELATIONSHIP TRANSFORMATION</div>
             <div class="rating-stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
             <p class="testimonial-text">
-              "Ishita's reading was so incredibly accurate and detailed. She picked up on specific career conflicts I hadn't shared with anyone. The remedies she gave me were simple but highly effective—within three weeks, the heavy blockage cleared and I secured the exact role I wanted. Truly gifted!"
+              "He talks about future, marriage, kids, yeh woh... matlab sab kuch itna achha chal raha hai! I'm literally in shock ki jab he left me toh woh banda mera call bhi nahi uthata tha, aapko sab pata hai—and today he's just chasing bro! Khud hi din mein 2–3 baar call karta hai ki 'khana khaya kya, kaisi hai, office pahunch gayi kya?' Kal raat 1–2 AM maine sirf bola tha ki I want to eat French fries at a particular cafe. Maine bola 'you sleep, kal office rahega,' par woh bola 'tujhe khana hai na, I'll come'—aur sach mein he was right there in front of my society gate, Ishita! Mujhe wahan le jaake fries khila ke ghar drop kiya. This is the progress—I am really, really so happy!"
             </p>
             <div class="testimonial-author">
-              <span class="author-name">— Ananya S.</span>
-              <span class="author-location">Jaipur</span>
+              <span class="author-name">— Verified Client</span>
+              <span class="author-location">100% Private &amp; Anonymous</span>
             </div>
           </div>
 
-          <!-- Slide 2 -->
+          <!-- Slide 2: Voice Note Review 2 (Clarity & Emotional Breakthrough) -->
           <div class="testimonial-slide">
+            <div class="review-type-pill"><i class="fas fa-microphone-lines gold-text"></i> VOICE NOTE FEEDBACK • CLARITY &amp; BREAKTHROUGH</div>
             <div class="rating-stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
             <p class="testimonial-text">
-              "The chakra balancing and aura cleansing session was genuinely life-changing. I walked into her sacred space with heavy physical anxiety and left feeling completely weightless, grounded, and clear. Ishita carries such pure, warm energy. She is a spiritual guide in the truest sense!"
+              "I'm feeling so good after sorting out things, and I took an exit today from a very, very, very crucial thing which was eating me like a termite inside my head. Thank you so much dude!"
             </p>
             <div class="testimonial-author">
-              <span class="author-name">— Riya M.</span>
-              <span class="author-location">Mumbai</span>
+              <span class="author-name">— Verified Client</span>
+              <span class="author-location">100% Private &amp; Anonymous</span>
             </div>
           </div>
 
-          <!-- Slide 3 -->
+          <!-- Slide 3: Proposal Feedback -->
           <div class="testimonial-slide">
+            <div class="review-type-pill"><i class="fas fa-ring gold-text"></i> MARRIAGE PROPOSAL &amp; LOVE GUIDANCE</div>
             <div class="rating-stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
             <p class="testimonial-text">
-              "I had a 60-minute Focus & Forecast video session. The way Ishita laid out my cards and explained the karmic cycles left me in awe. It gave me the validation I desperately needed to step away from a toxic connection and align with my manifestation work. Simply sublime!"
+              "Bro, I just came back from his home—I have so many things to tell you! He just proposed me 🥺😭 Finally bro finally!! Thank you so much yaar Ishita, you told me he's mine &amp; we'll marry each other. Your guidance led me to this—You're Magical, God Bless You Yaar! Maine abhi ans nahi diya, he was like 'take your time if you want' so kal parso milke I'll ans him. A very big thank you to you yaar ❤️"
             </p>
             <div class="testimonial-author">
-              <span class="author-name">— Neha T.</span>
-              <span class="author-location">New Delhi</span>
+              <span class="author-name">— Verified Client</span>
+              <span class="author-location">100% Private &amp; Anonymous</span>
+            </div>
+          </div>
+
+          <!-- Slide 4: 24-Hour No-Contact Breakthrough -->
+          <div class="testimonial-slide">
+            <div class="review-type-pill"><i class="fas fa-bolt gold-text"></i> 24-HOUR ENERGY SHIFT &amp; RECONCILIATION</div>
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Change ur name to Angel's name as u light my life up after ur session! I was not sure if it will workout for me, but in 24 hours how can I get the message from someone who did not message me for 3 months?! 😭😭😭 Mam how did u do it, it's shocking &amp; magical!"
+            </p>
+            <div class="testimonial-author">
+              <span class="author-name">— Verified Client</span>
+              <span class="author-location">100% Private &amp; Anonymous</span>
+            </div>
+          </div>
+
+          <!-- Slide 5: Chasing & Rapid Prediction -->
+          <div class="testimonial-slide">
+            <div class="review-type-pill"><i class="fas fa-heart gold-text"></i> ACCURATE PREDICTION &amp; MANIFESTATION</div>
+            <div class="rating-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Ishita.. you were right! Chasing chalu 🤣😅 Kal morning 7:30 se messages aa rahe hain 🤣😅 You are too good 🩷🫡 Faster than expected na? I mean sooner!"
+            </p>
+            <div class="testimonial-author">
+              <span class="author-name">— Verified Client</span>
+              <span class="author-location">100% Private &amp; Anonymous</span>
             </div>
           </div>
         </div>
         
-        <button class="carousel-control next" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
+        <button class="carousel-control next" type="button" onclick="nextTestimonial()" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
       </div>
 
       <!-- Carousel Indicators -->
@@ -1325,9 +1494,25 @@
         <span class="dot active" onclick="jumpToSlide(0)"></span>
         <span class="dot" onclick="jumpToSlide(1)"></span>
         <span class="dot" onclick="jumpToSlide(2)"></span>
+        <span class="dot" onclick="jumpToSlide(3)"></span>
+        <span class="dot" onclick="jumpToSlide(4)"></span>
+      </div>
+
+      <div class="reviews-cta-wrap text-center">
+        <button class="btn btn-gold-filled" onclick="openBookingModal('Relationship & Life Alignment Session', 'Tarot & Energy Guidance')">
+          BOOK YOUR SESSION NOW <i class="fab fa-whatsapp"></i>
+        </button>
       </div>
     </div>
   </section>
+
+  <!-- Lightbox Modal for Enlarging Review Screenshots -->
+  <div id="review-lightbox" class="modal-overlay" onclick="closeReviewLightbox(event)">
+    <div class="review-lightbox-content">
+      <button class="modal-close" onclick="closeReviewLightbox(event)" aria-label="Close preview">&times;</button>
+      <img id="review-lightbox-img" src="" alt="Client Review Screenshot">
+    </div>
+  </div>
 
   <!-- ============================================ -->
   <!-- PRECIOUS, SEMI-PRECIOUS & HEALING STONES SECTION -->
@@ -1652,8 +1837,8 @@
           </p>
           <div class="footer-socials">
             <a href="https://instagram.com" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/" target="_blank" aria-label="Connect on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:contact@divineoracletarot.com" aria-label="Email us"><i class="far fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="openBookingModal('General Consultation', 'WhatsApp')" aria-label="Connect on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:ishita@divineoracle.com" aria-label="Email us"><i class="far fa-envelope"></i></a>
           </div>
         </div>
 
@@ -1676,7 +1861,7 @@
           <ul class="footer-links">
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#faq">Frequently Asked Questions</a></li>
-            <li><a href="#home" onclick="openBookingModal('General Support', 'General Query')">Contact Support</a></li>
+            <li><a href="javascript:void(0)" onclick="openBookingModal('General Support', 'General Query')">Contact Support</a></li>
             <li><a href="javascript:void(0)" onclick="alert('This website uses secure SSL encryption to protect client information. All session details are strictly confidential under the Divine Oracle Code of Conduct.')">Privacy Policy</a></li>
           </ul>
         </div>
@@ -1783,6 +1968,6 @@
   </div><!-- /#site -->
 
   <!-- JavaScript Modules -->
-  <script src="app.js?v=3.0"></script>
+  <script src="app.js?v=3.6"></script>
 </body>
 </html>
