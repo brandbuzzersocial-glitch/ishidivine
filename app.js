@@ -336,7 +336,7 @@ window.handleFormSubmission = function(event) {
     formattedDob = dob;
   }
   
-  const whatsappNumber = '919999988888'; // Replace with Ishita's actual WhatsApp Business number
+  const whatsappNumber = '918290103764'; // Ishita Kothari's official WhatsApp number (+91 82901 03764)
   const message = `🔮 *NEW SACRED BOOKING REQUEST* 🔮
 
 👤 *Client Name:* ${name}
