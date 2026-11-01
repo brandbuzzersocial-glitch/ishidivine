@@ -5123,7 +5123,18 @@ body::-webkit-scrollbar-thumb {
   }
 
   .about-visual {
-    max-width: 340px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .about-image-wrapper {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .about-intro-video {
+    max-height: 360px;
+    border-radius: calc(var(--radius-lg) - 4px);
   }
 
   .about-mandala-bg {
@@ -5325,6 +5336,45 @@ body::-webkit-scrollbar-thumb {
     text-overflow: ellipsis;
   }
 
+  /* Scrollable Healing Gallery Mobile Optimization */
+  .healing-ritual-gallery-wrap {
+    margin: 2.2rem 0 1.5rem;
+  }
+
+  .healing-gallery-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .healing-gallery-title {
+    font-size: 1.35rem;
+  }
+
+  .healing-gallery-scroll-shell {
+    gap: 0;
+  }
+
+  .gallery-scroll-btn {
+    display: none;
+  }
+
+  .healing-scrollable-track {
+    gap: 0.9rem;
+    padding: 0.35rem 0.25rem 0.9rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .healing-scrollable-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .healing-gallery-item {
+    flex: 0 0 78%;
+    max-width: 260px;
+    height: 310px;
+    scroll-snap-align: center;
+  }
+
   /* 8. Learn With Me Section & Dedicated Academy Page */
   .academy-hero-section {
     padding: 96px 0 3rem;
@@ -5360,8 +5410,23 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
   }
 
+  .course-title {
+    font-size: 1.18rem;
+  }
+
   .course-curriculum-list li {
     font-size: 0.88rem;
+  }
+
+  .course-right-col {
+    width: 100%;
+    min-width: 0;
+    align-items: stretch;
+  }
+
+  .course-price-box {
+    width: 100%;
+    padding: 0.75rem 1rem;
   }
 
   .academy-cta-wrap .btn {
@@ -5614,6 +5679,12 @@ body::-webkit-scrollbar-thumb {
 
   .services-tabs {
     grid-template-columns: 1fr;
+  }
+
+  .healing-gallery-item {
+    flex: 0 0 84%;
+    max-width: 245px;
+    height: 290px;
   }
 
   .review-screenshot-card {
