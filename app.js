@@ -257,6 +257,15 @@ window.closeReviewLightbox = function(event) {
   }
 };
 
+// 3c. Scrollable Healing Gallery Controls
+window.scrollHealingGallery = function(direction) {
+  const track = document.getElementById('healing-scrollable-track');
+  if (track) {
+    const scrollAmount = 300 * (direction || 1);
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+};
+
 window.closeMobileNav = function() {
   const navToggle = document.querySelector('.mobile-nav-toggle');
   const navMenu = document.getElementById('primary-navigation');

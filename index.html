@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css?v=4.4">
+  <link rel="stylesheet" href="styles.css?v=4.5">
 
   <!-- Three.js for 3D Intro Animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -785,75 +785,6 @@
         </div>
       </div>
 
-      <!-- Sacred Altar & Live Rituals Media Showcase (3 Videos + 2 Photos) -->
-      <div class="healing-ritual-gallery-wrap" id="healing-ritual-gallery">
-        <div class="healing-ritual-gallery-header text-center">
-          <span class="protocol-badge"><i class="fas fa-fire-flame-curved gold-text"></i> GLIMPSE INSIDE THE SACRED ALTAR</span>
-          <h3 class="healing-gallery-title">REAL RITUALS, CANDLE SPELLS &amp; <span class="gold-text">PLANETARY WORKINGS</span></h3>
-          <p class="healing-gallery-sub">Authentic glimpses of sacred candle magic, sound &amp; smoke purification, and 12-house zodiac planetary alignments performed by Ishita Kothari.</p>
-        </div>
-
-        <div class="reviews-screenshots-grid healing-media-grid">
-          <!-- Ritual Video 1: Love & Union Candle Ritual -->
-          <div class="review-screenshot-card review-video-card glass-panel">
-            <div class="screenshot-img-wrap video-player-wrap healing-media-frame">
-              <video class="healing-ritual-video" src="images/healing_ritual_video_1.mp4" poster="images/healing_ritual_video_1_poster.jpg" autoplay loop muted playsinline controls preload="metadata">
-                Your browser does not support HTML5 video.
-              </video>
-            </div>
-            <div class="screenshot-caption">
-              <p>Sacred Couple Candle &amp; Moon-Phase Crystal Grid for Soul Union &amp; Heart Alignment</p>
-            </div>
-          </div>
-
-          <!-- Ritual Photo 1: Two of Cups & The Lovers Altar -->
-          <div class="review-screenshot-card glass-panel" onclick="openReviewLightbox('images/healing_ritual_img_1.jpg')">
-            <div class="screenshot-img-wrap healing-media-frame">
-              <img src="images/healing_ritual_img_1.jpg" alt="Sacred Love Spell Altar with Two of Cups and The Lovers Tarot" loading="lazy">
-              <div class="screenshot-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> Enlarge</div>
-            </div>
-            <div class="screenshot-caption">
-              <p>Two of Cups &amp; The Lovers Tarot Altar with Rose Quartz, Crystals &amp; Nazar Shielding</p>
-            </div>
-          </div>
-
-          <!-- Ritual Video 2: Aura Cleansing, Singing Bowl & Incense -->
-          <div class="review-screenshot-card review-video-card glass-panel">
-            <div class="screenshot-img-wrap video-player-wrap healing-media-frame">
-              <video class="healing-ritual-video" src="images/healing_ritual_video_2.mp4" poster="images/healing_ritual_video_2_poster.jpg" autoplay loop muted playsinline controls preload="metadata">
-                Your browser does not support HTML5 video.
-              </video>
-            </div>
-            <div class="screenshot-caption">
-              <p>Tibetan Singing Bowl, Sacred Smoke &amp; Crystal Tree Detoxification Working</p>
-            </div>
-          </div>
-
-          <!-- Ritual Video 3: 12-Zodiac Planetary Wheel Ritual -->
-          <div class="review-screenshot-card review-video-card glass-panel">
-            <div class="screenshot-img-wrap video-player-wrap healing-media-frame">
-              <video class="healing-ritual-video" src="images/healing_ritual_video_3.mp4" poster="images/healing_ritual_video_3_poster.jpg" autoplay loop muted playsinline controls preload="metadata">
-                Your browser does not support HTML5 video.
-              </video>
-            </div>
-            <div class="screenshot-caption">
-              <p>12-House Astrological Zodiac Candle Circle &amp; Orgonite Pyramid Activation</p>
-            </div>
-          </div>
-
-          <!-- Ritual Photo 2: Planetary Alignment Wheel -->
-          <div class="review-screenshot-card glass-panel" onclick="openReviewLightbox('images/healing_ritual_img_2.jpg')">
-            <div class="screenshot-img-wrap healing-media-frame">
-              <img src="images/healing_ritual_img_2.jpg" alt="12 Zodiac Planetary Candle Ritual Wheel" loading="lazy">
-              <div class="screenshot-zoom-hint"><i class="fas fa-magnifying-glass-plus"></i> Enlarge</div>
-            </div>
-            <div class="screenshot-caption">
-              <p>Sacred Geometry Zodiac Wheel Illuminated for Vedic Graha &amp; Dasha Balance</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Core Healings & Spells Showcase Grid -->
       <p class="healing-intro-note" id="healing-intro-note">
         <i class="fas fa-sparkles gold-text"></i> Some main healings &amp; spells with current special prices are showcased below:
@@ -1141,6 +1072,61 @@
           </button>
         </div>
 
+      </div>
+
+      <!-- Scrollable Healing Gallery (Under the List of Healings) -->
+      <div class="healing-ritual-gallery-wrap" id="healing-ritual-gallery">
+        <div class="healing-ritual-gallery-header text-center">
+          <h3 class="healing-gallery-title">HEALING <span class="gold-text">GALLERY</span></h3>
+        </div>
+
+        <div class="healing-gallery-scroll-shell">
+          <button class="gallery-scroll-btn prev" type="button" onclick="scrollHealingGallery(-1)" aria-label="Scroll gallery left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="healing-scrollable-track" id="healing-scrollable-track">
+            <div class="healing-gallery-item glass-panel">
+              <video class="healing-ritual-video" src="images/healing_ritual_video_1.mp4" poster="images/healing_ritual_video_1_poster.jpg" autoplay loop muted playsinline controls preload="metadata"></video>
+            </div>
+
+            <div class="healing-gallery-item glass-panel" onclick="openReviewLightbox('images/healing_reiki_hands.jpg')">
+              <img src="images/healing_reiki_hands.jpg" alt="Reiki and Pranic Energy Healing" loading="lazy">
+            </div>
+
+            <div class="healing-gallery-item glass-panel">
+              <video class="healing-ritual-video" src="images/healing_ritual_video_2.mp4" poster="images/healing_ritual_video_2_poster.jpg" autoplay loop muted playsinline controls preload="metadata"></video>
+            </div>
+
+            <div class="healing-gallery-item glass-panel" onclick="openReviewLightbox('images/healing_himalayan_bowl.jpg')">
+              <img src="images/healing_himalayan_bowl.jpg" alt="Tibetan Singing Bowl Sound Healing" loading="lazy">
+            </div>
+
+            <div class="healing-gallery-item glass-panel">
+              <video class="healing-ritual-video" src="images/healing_ritual_video_3.mp4" poster="images/healing_ritual_video_3_poster.jpg" autoplay loop muted playsinline controls preload="metadata"></video>
+            </div>
+
+            <div class="healing-gallery-item glass-panel" onclick="openReviewLightbox('images/healing_sage_cleansing.jpg')">
+              <img src="images/healing_sage_cleansing.jpg" alt="White Sage Smudge Cleansing Ritual" loading="lazy">
+            </div>
+
+            <div class="healing-gallery-item glass-panel" onclick="openReviewLightbox('images/healing_incense_meditation.jpg')">
+              <img src="images/healing_incense_meditation.jpg" alt="Sacred Smoke and Meditation Healing" loading="lazy">
+            </div>
+
+            <div class="healing-gallery-item glass-panel" onclick="openReviewLightbox('images/healing_abundance_citrine.jpg')">
+              <img src="images/healing_abundance_citrine.jpg" alt="Citrine Abundance and Chakra Crystal" loading="lazy">
+            </div>
+
+            <div class="healing-gallery-item glass-panel" onclick="openReviewLightbox('images/mystical_crystals.png')">
+              <img src="images/mystical_crystals.png" alt="Sacred Crystal and Candle Altar" loading="lazy">
+            </div>
+          </div>
+
+          <button class="gallery-scroll-btn next" type="button" onclick="scrollHealingGallery(1)" aria-label="Scroll gallery right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -1836,7 +1822,7 @@
             Divine guidance. Timeless wisdom. Dedicated to aligning your energies and empowering your life journey through intuitive occult sciences.
           </p>
           <div class="footer-socials">
-            <a href="https://www.instagram.com/divineoracle.tarot?psln=NWgyc2J5N3lzeGVu" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/divineoracle.tarot/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/918290103764" target="_blank" rel="noopener noreferrer" aria-label="Connect on WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="mailto:ishita@divineoracle.com" aria-label="Email us"><i class="far fa-envelope"></i></a>
           </div>
@@ -1871,7 +1857,7 @@
           <h4>CONNECT DIRECTLY</h4>
           <ul class="footer-contact">
             <li><i class="fab fa-whatsapp gold-text"></i> <a href="https://wa.me/918290103764" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><span>WhatsApp: +91 82901 03764</span></a></li>
-            <li><i class="fab fa-instagram gold-text"></i> <a href="https://www.instagram.com/divineoracle.tarot?psln=NWgyc2J5N3lzeGVu" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><span>Instagram: @divineoracle.tarot</span></a></li>
+            <li><i class="fab fa-instagram gold-text"></i> <a href="https://www.instagram.com/divineoracle.tarot/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><span>Instagram: @divineoracle.tarot</span></a></li>
             <li><i class="far fa-envelope gold-text"></i> <a href="mailto:ishita@divineoracle.com" style="color: inherit; text-decoration: none;"><span>Email: ishita@divineoracle.com</span></a></li>
             <li><i class="fas fa-map-marker-alt gold-text"></i> <span>Location: Jaipur, India</span></li>
           </ul>
@@ -1968,6 +1954,6 @@
   </div><!-- /#site -->
 
   <!-- JavaScript Modules -->
-  <script src="app.js?v=3.7"></script>
+  <script src="app.js?v=3.8"></script>
 </body>
 </html>
