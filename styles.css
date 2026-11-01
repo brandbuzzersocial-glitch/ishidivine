@@ -1497,6 +1497,7 @@ a {
 .healing-scrollable-track {
   display: flex;
   align-items: stretch;
+  justify-content: center;
   gap: 1.25rem;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -1505,6 +1506,12 @@ a {
   width: 100%;
   scrollbar-width: thin;
   scrollbar-color: rgba(212, 175, 55, 0.45) rgba(2, 8, 24, 0.5);
+}
+
+@media (max-width: 1220px) {
+  .healing-scrollable-track {
+    justify-content: flex-start;
+  }
 }
 
 .healing-scrollable-track::-webkit-scrollbar {
@@ -1550,6 +1557,9 @@ a {
   display: block;
   background: #01040d;
   transition: transform 0.4s ease;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .healing-gallery-item:hover img {

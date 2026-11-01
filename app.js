@@ -325,14 +325,20 @@ window.handleFormSubmission = function(event) {
   const partnerEl = document.getElementById('partner-details');
   const questionsEl = document.getElementById('client-questions');
   
-  const service = serviceInput ? serviceInput.value : 'General Consultation';
-  const format = formatInput ? formatInput.value : 'Reading Session';
-  const name = (nameEl && nameEl.value) ? nameEl.value : 'Valued Client';
-  const dob = (dobEl && dobEl.value) ? dobEl.value : 'Not provided';
-  const tob = (tobEl && tobEl.value) ? tobEl.value : 'Not provided';
-  const birthplace = (pobEl && pobEl.value) ? pobEl.value : 'Not provided';
-  const partner = (partnerEl && partnerEl.value) ? partnerEl.value : 'None';
-  const questions = (questionsEl && questionsEl.value) ? questionsEl.value : 'General intuitive guidance';
+  const sanitizeInput = (val, fallback) => {
+    if (!val || typeof val !== 'string') return fallback;
+    const cleaned = val.replace(/[<>]/g, '').trim();
+    return cleaned.length > 0 ? cleaned.slice(0, 1200) : fallback;
+  };
+
+  const service = sanitizeInput(serviceInput ? serviceInput.value : '', 'General Consultation');
+  const format = sanitizeInput(formatInput ? formatInput.value : '', 'Reading Session');
+  const name = sanitizeInput(nameEl ? nameEl.value : '', 'Valued Client');
+  const dob = sanitizeInput(dobEl ? dobEl.value : '', 'Not provided');
+  const tob = sanitizeInput(tobEl ? tobEl.value : '', 'Not provided');
+  const birthplace = sanitizeInput(pobEl ? pobEl.value : '', 'Not provided');
+  const partner = sanitizeInput(partnerEl ? partnerEl.value : '', 'None');
+  const questions = sanitizeInput(questionsEl ? questionsEl.value : '', 'General intuitive guidance');
   
   let formattedDob = dob;
   try {
@@ -366,7 +372,7 @@ window.handleFormSubmission = function(event) {
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   
-  window.open(whatsappUrl, '_blank');
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   window.closeBookingModal();
 };
 
@@ -1143,6 +1149,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scrollVideos.forEach(video => videoScrollObserver.observe(video));
   }
+
+  // Media & Content Protection (Prevent unauthorized right-click or drag-saving of videos & images)
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target && e.target.closest('img, video, .healing-gallery-item, .review-screenshot-card, .about-image-wrapper, .lightbox-content')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('dragstart', (e) => {
+    if (e.target && (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO')) {
+      e.preventDefault();
+    }
+  });
 
 });
 
